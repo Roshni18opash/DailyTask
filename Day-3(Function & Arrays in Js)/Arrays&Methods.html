@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays and Methods</title>
+</head>
+<body>
+    <p id="fruit" style="font-size: larger; color: rgb(107, 10, 197);"></p>
+    <script>
+        const fruits=["Apple","Banana","Cherry","Orange"];
+        let mylist=fruits.length;
+    let text="<ul>"
+        for(let i=0;i<mylist;i++){
+            text+="<li>" + fruits[i] + "</li>"
+        } text+="</ul>"
+        document.getElementById("fruit").innerHTML=text;
+    </script>
+    
+</body>
+</html>

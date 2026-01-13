@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coffee-Website</title>
+    <!-- link fontawesome for icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"/>
+     <!-- Link swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css">
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Header/Navbar -->
+    <header>
+      <nav class="navbar section-content">
+        <a href="#" class="nav-logo">
+          <h2 class="logo-text">☕Coffee</h2>
+        </a>
+        <ul class="nav-menu">
+          <button class="fas fa-times" id="menu-close-button"></button>
+          <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">About</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">Menu</a></li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">Testimonials</a>
+          </li>
+          <li class="nav-item"><a href="#" class="nav-link">Gallery</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">Contact</a></li>
+        </ul>
+        <button class="fas fa-bars" id="menu-open-button"></button>
+      </nav>
+    </header>
+    <!-- Hero section -->
+    <main class="">
+      <section class="hero-section">
+        <div class="section-content">
+          <div class="hero-details">
+            <h2 class="title">Best Coffee</h2>
+            <h3 class="sub-title">
+              Make Your Day Great with our Special Coffee!
+            </h3>
+            <p class="description">
+              Welcome to Our Coffee Paradise,Where every bean tells a story and
+              every cup sparks joy.
+            </p>
+            <div class="buttons">
+              <a href="#" class="button order-now">Order Now</a>
+              <a href="#" class="button contact-us">Contact Us</a>
+            </div>
+          </div>
+          <div class="hero-image-wrapper">
+            <img
+              src="images/coffee-hero-section.png"
+              alt="hero"
+              class="hero-img"
+            />
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- About section-->
+    <section class="about-section">
+      <div class="section-content">
+        <div class="about-image-wrapper">
+          <img src="images/about-image.jpg" alt="About" class="about-image" />
+        </div>
+        <div class="about-details">
+          <h2 class="section-title">About Us</h2>
+          <p class="text">
+            At Coffee-House in Berndorf,Germany, we pride ourselves on being a
+            go-to destination for coffee lovers and conversation seekers
+            alike.we're dedicated to pri oviding an exceptional coffee
+            experience in a cozy and inviting atmosphere, where guest can relax
+            unwind and enjoy their time in comfort.
+          </p>
+          <div class="social-link-list">
+            <a href="#" class="social-link"
+              ><i class="fa-brands fa-facebook"></i
+            ></a>
+            <a href="#" class="social-link"
+              ><i class="fa-brands fa-instagram"></i
+            ></a>
+            <a href="#" class="social-link"
+              ><i class="fa-brands fa-x-twitter"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--Menu section-->
+    <section class="menu-section">
+      <h2 class="section-title">Our Menu</h2>
+      <div class="section-content">
+        <ul class="menu-list">
+          <li class="menu-item">
+            <img
+              src="images/hot-beverages.png"
+              alt="Hot-Beverages"
+              class="menu-image"
+            />
+            <h3 class="name">Hot-Beverages</h3>
+            <p class="text">
+              Wide range of streaming hot coffee to make you fresh and light.
+            </p>
+          </li>
+          <li class="menu-item">
+            <img
+              src="images/cold-beverages.png"
+              alt="Cold-Beverages"
+              class="menu-image"
+            />
+            <h3 class="name">Cold-Beverages</h3>
+            <p class="text">Creamy and frothy cold coffee to make you cool.</p>
+          </li>
+          <li class="menu-item">
+            <img
+              src="images/refreshment.png"
+              alt="Refreshment"
+              class="menu-image"
+            />
+            <h3 class="name">Refreshment</h3>
+            <p class="text">
+              Fruit and icy refreshing drink to make feel refresh.
+            </p>
+          </li>
+          <li class="menu-item">
+            <img
+              src="images/special-combo.png"
+              alt="Special Combos"
+              class="menu-image"
+            />
+            <h3 class="name">Special Combos</h3>
+            <p class="text">Your favoutite eating and drinking combations.</p>
+          </li>
+          <li class="menu-item">
+            <img src="images/desserts.png" alt="Dessert" class="menu-image" />
+            <h3 class="name">Dessert</h3>
+            <p class="text">
+              Satitate your palate and take you on a culinary treat.
+            </p>
+          </li>
+          <li class="menu-item">
+            <img
+              src="images/burger-frenchfries.png"
+              alt="Burger and French-fries"
+              class="menu-image"
+            />
+            <h3 class="name">Burger & French Fries</h3>
+            <p class="text">Quick bites to satisfy your small size hunger.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <!-- Testimonial Section -->
+    <section class="testimonials-section">
+      <h2 class="section-title">Testimonials</h2>
+      <div class="section-content">
+        <div class="slider-container swiper">
+          <div class="slider-wrapeer">
+            <ul class="testimonials-list swiper-wrapper">
+              <li class="testimonial swiper-slide">
+                <img src="images/user-1.jpg" alt="" class="user-image" />
+                <h3 class="name">Emily Carter</h3>
+                <i class="feedback">
+                  "Absolutely loved the cappuccino! Smooth, creamy, and
+                  perfectly brewed. This place is now my daily coffee stop."
+                </i>
+              </li>
+
+              <li class="testimonial swiper-slide ">
+                <img src="images/user-2.jpg" alt="" class="user-image" />
+                <h3 class="name">Michael Brown</h3>
+                <i class="feedback">
+                  "The cold brew was refreshing and strong, just how I like it.
+                  Great quality and fast service!"
+                </i>
+              </li>
+
+              <li class="testimonial swiper-slide">
+                <img src="images/user-3.jpg" alt="" class="user-image" />
+                <h3 class="name">Olivia Martinez</h3>
+                <i class="feedback">
+                  "Amazing flavors and fresh ingredients. The mocha was rich
+                  without being too sweet. Highly recommended!"
+                </i>
+              </li>
+
+              <li class="testimonial swiper-slide">
+                <img src="images/user-4.jpg" alt="" class="user-image" />
+                <h3 class="name">Sophia Lee</h3>
+                <i class="feedback">
+                  "Best espresso I’ve had in a long time. Strong aroma and
+                  smooth taste. You can really feel the premium quality."
+                </i>
+              </li>
+
+              <li class="testimonial swiper-slide">
+                <img src="images/user-5.jpg" alt="" class="user-image" />
+                <h3 class="name">Ryan Miller</h3>
+                <i class="feedback">
+                  "Loved the herbal tea selection! Very calming and fresh.
+                  Perfect place to relax and enjoy a warm drink."
+                </i>
+              </li>
+            </ul>
+            
+  <div class="swiper-pagination"></div>
+  <div class="swiper-slide-button swiper-button-prev"></div>
+  <div class="swiper-slide-button swiper-button-next"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Gallery Section -->
+     <section class="gallery-section">
+      <h2 class="section-title">Gallery</h2>
+<div class="section-content">
+  <ul class="gallery-list">
+    <li class="gallery-item">
+      img.
+    </li>
+  </ul>
+</div>
+     </section>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

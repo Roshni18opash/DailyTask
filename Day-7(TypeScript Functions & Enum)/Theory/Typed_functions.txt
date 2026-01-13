@@ -1,0 +1,110 @@
+                                                                                                                                      -:Typed Functionst:-
+TypeScript functions are JavaScript functions with types added for:
+*parameters
+*return values
+*structure (function types)
+
+ What is a Typed Function in TypeScript?
+A typed function is a function whose structure (signature) is defined using a type alias or interface.
+Instead of typing the function inline, you define how the function should look first, then assign a function to it.
+A typed function acts like a contract:
+“Any function assigned here MUST accept these parameters and MUST return this type.”
+
+Normal Function (NOT a typed function):
+function add(a: number, b: number): number {
+  return a + b;
+}
+
+Typed Function Using type (MOST COMMON)
+type AddFn = (a: number, b: number) => number;
+const add: AddFn = (a, b) => {
+  return a + b;
+};
+Typed Function Using interface:
+interface MultiplyFn {
+  (a: number, b: number): number;
+}
+const multiply: MultiplyFn = (a, b) => a * b;
+Typed Function with Object.
+type DivideFn = (data: { dividend: number; divisor: number }) => number;
+const divide: DivideFn = ({ dividend, divisor }) => {
+  return dividend / divisor;
+};
+Typed Function with Default value:
+type PowerFn = (value: number, exponent?: number) => number;
+const pow: PowerFn = (value, exponent = 2) => {
+  return value ** exponent;
+};
+| Normal Function               | Typed Function                |
+| ----------------------------- | ----------------------------- |
+| Types inside function         | Types defined separately      |
+| Less reusable                 | Highly reusable               |
+| Simple use                    | Large apps, React, APIs       |
+| Harder to enforce consistency | Enforces structure everywhere |
+Real-World Use Cases (VERY IMPORTANT)
+✔ React props
+✔ Event handlers
+✔ API service functions
+✔ Utility functions
+✔ Callbacks (map, filter, reduce)
+PATTERN OF TYPED FUNCTIONS:
+type FnType = (params...) => returnType;
+
+const fn: FnType = (params...) => {
+  // logic
+};
+INTERFEARANCE:
+interface FnType {
+  (params...): returnType;
+}
+
+
+EXAMPLE:1
+type CalculatorFn = (a: number, b: number) => number;
+const add: CalculatorFn = (a, b) => a + b;
+const sub: CalculatorFn = (a, b) => a - b;
+console.log(add(10, 5));
+console.log(sub(10, 5));
+
+Example:2
+type GreetFn = (name: string) => string;
+const greet: GreetFn = (name) => {
+  return "Hello " + name;
+};
+console.log(greet("Roshni"));
+
+Example:3
+type IsAdultFn = (age: number) => boolean;
+const isAdult: IsAdultFn = (age) => {
+  return age >= 18;
+};
+console.log(isAdult(20)); // true
+
+Example:4
+type DiscountFn = (price: number, discount: number) => number;
+const calculatePrice: DiscountFn = (price, discount) => {
+  return price - (price * discount) / 100;
+};
+
+console.log(calculatePrice(1000, 10)); // 900
+
+Example:4
+type LoginFn = (email: string, password: string) => boolean;
+const login: LoginFn = (email, password) => {
+  return email === "admin@gmail.com" && password === "1234";
+};
+exmple:5(with obj)
+type UserFn = (user: { name: string; age: number }) => string;
+const getUserInfo: UserFn = (user) => {
+  return `${user.name} is ${user.age} years old`;
+};
+console.log(getUserInfo({ name: "Roshni", age: 22 }));
+
+						
+
+
+
+
+
+
+

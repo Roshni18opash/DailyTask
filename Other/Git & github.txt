@@ -1,0 +1,70 @@
+What is Git?
+Git is a version control system used to track changes in source code.It was created by Linus Torvalds in 2005, and has been maintained by Junio Hamano since then.
+It is used for:
+Tracking code changes
+Tracking who made changes
+Coding collaboration
+
+what is Github?
+GitHub is an online platform that stores your Git repositories.GitHub is a cloud platform that hosts Git repositories.
+What is Git workflow?
+Git workflow is the process of moving code from working directory to staging, commit, and then pushing it to a remote repository.
+Git is not the same as GitHub.
+GitHub makes tools that use Git.
+GitHub is the largest host of source code in the world, and has been owned by Microsoft since 2018.
+
+🔹 What is git clone?
+git clone is used to copy an existing GitHub repository to your local computer.
+👉 In simple words:
+GitHub → Your system
+📌 You use git clone when:
+Project already exists on GitHub
+You want to work on it locally
+You join a team project
+
+Q1️What is git commit?
+git commit saves changes to the local repository with a message.
+
+Q2️What is git push?
+git push uploads local commits to a remote repository.
+
+* How to Create and switch branch?
+git checkout -b branch-name
+
+Repository: A folder where Git tracks your project and its history.
+Clone: Make a copy of a remote repository on your computer.
+Stage: Tell Git which changes you want to save next.
+Commit: Save a snapshot of your staged changes.
+Branch: Work on different versions or features at the same time.
+Merge: Combine changes from different branches.
+Pull: Get the latest changes from a remote repository.
+Push: Send your changes to a remote repository.
+
+
+| Command               | Purpose               |
+| --------------------- | --------------------- |
+| `git init`            | Start Git in project  |
+| `git status`          | Check file status     |
+| `git add .`           | Stage all files       |
+| `git commit -m "msg"` | Save version          |
+| `git push`            | Upload to GitHub      |
+| `git pull`            | Download latest code  |
+| `git clone`           | Copy repo from GitHub |
+
+| Command                | Use             |
+| ---------------------- | --------------- |
+| `git branch`           | List branches   |
+| `git branch name`      | Create branch   |
+| `git checkout name`    | Switch branch   |
+| `git checkout -b name` | Create + switch |
+| `git merge name`       | Merge branch    |
+| `git branch -d name`   | Delete branch   |
+
+
+👉 Git is a version control system to track code changes.
+👉 GitHub is an online platform to store and share Git repositories.
+👉 Git workflow consists of:
+Working directory
+Staging area
+Commit
+Push to remote repo

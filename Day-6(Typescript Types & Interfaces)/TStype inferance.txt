@@ -1,0 +1,83 @@
+TypeScript Types & Interfaces:
+
+String:
+let username: string = "Roshni";
+let message: string = `Hello ${username}`;
+
+Number:
+let age: number = 23;
+let price: number = 99.99;
+let temperature: number = -5;
+
+Boolean:
+let isLoggedIn: boolean = true;
+let isAdmin: boolean = false;
+
+Null:
+let selectedUser: null = null;
+with Union type
+let userName: string | null = null;
+
+Undefine:
+let result: undefined;
+let value: number | undefined;
+
+Symbol:
+let id: symbol = Symbol("id");
+
+Bigint:
+let bigNumber: bigint = 12345678901234567890n;
+
+| Type        | Example         |
+| ----------- | --------------- |
+| `string`    | `"Hello"`       |
+| `number`    | `100`, `3.14`   |
+| `boolean`   | `true`, `false` |
+| `null`      | `null`          |
+| `undefined` | `undefined`     |
+| `symbol`    | `Symbol("id")`  |
+| `bigint`    | `123n`          |
+  
+Non-primitive: Array,Object,Function
+
+ Interfaces & typr aliases:
+
+1.What is an Interface?
+An interface is used to define the structure (shape) of an object.
+example:
+interface User {
+  id: number;
+  name: string;
+  isActive: boolean;
+}
+const user1: User = {
+  id: 1,
+  name: "Roshni",
+  isActive: true
+};
+ Used mainly for objects
+Very common in APIs & React props
+
+ When to Use What?
+ Use Interface when:
+Object shape define karni ho
+React props / state
+Public API models
+Class implement karna ho
+
+Use Type Alias when:
+Union / intersection chahiye
+Function types
+Complex types
+Utility types ke saath kaam
+
+Interface is best for object structure and extensibility, Type alias is best for flexibility and complex types.
+
+ What is a Typed Object?
+A typed object is an object whose structure is enforced by a type or interface.
+
+TypeScript check karta hai:
+property ka naam
+property ka type
+missing / extra properties
+

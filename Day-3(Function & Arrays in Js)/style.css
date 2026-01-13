@@ -1,0 +1,37 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f6f8;
+  padding: 40px;
+}
+
+.card {
+  width: 400px;
+  background: rgb(54, 105, 139);
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin: auto;
+}
+
+h2 {
+  text-align: center;
+  color: white;
+}
+
+.max-text {
+  font-size: 20px;
+  color: rgb(187, 125, 125);
+  font-weight: bold;
+}
+
+.min-text {
+  font-size: 20px;
+  color: rgb(150, 212, 150);
+  font-weight: bold;
+}
+
+#max,
+#min {
+  color: white;
+  font-weight: bold;
+}

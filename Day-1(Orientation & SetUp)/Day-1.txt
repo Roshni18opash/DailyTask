@@ -1,0 +1,14 @@
+Completed Task: 
+-JavaScript, TypeScript (practice and learn) & Git
+-Orientation & Setup
+ *Learning:
+o MERN + TypeScript roadmap
+* Practice:
+o Install Node.js
+o Install VS Code
+o Install Git
+ Assignment:
+o Create GitHub account - Done
+ Output:
+o GitHub profile link 
+My Git Profile Link:https://github.com/Roshni18opash
