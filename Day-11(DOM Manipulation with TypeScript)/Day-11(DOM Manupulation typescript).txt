@@ -1,0 +1,10 @@
+
+DOM manpulation Typescript
+
+| HTML Element | TypeScript Type        |
+| ------------ | ---------------------- |
+| `<div>`      | `HTMLDivElement`       |
+| `<input>`    | `HTMLInputElement`     |
+| `<form>`     | `HTMLFormElement`      |
+| `<button>`   | `HTMLButtonElement`    |
+| `<p>`        | `HTMLParagraphElement` |
