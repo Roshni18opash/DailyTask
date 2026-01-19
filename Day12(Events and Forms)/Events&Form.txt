@@ -1,0 +1,114 @@
+				--:Event Types in Typescript:--
+MouseEvent: For mouse-related events (like click, mousemove).
+KeyboardEvent: For keyboard-related events (like keydown, keyup).
+SubmitEvent: For form submission events
+				1️.Mouse Events	
+TYPESCRIPT TYPE:MouseEvent
+ Event    -    When it fires        
+ -------------------------------- 
+ `click`      -    Mouse click          
+`dblclick`   - Double click         
+`mouseenter` -Mouse enters element 
+`mouseleave` - Mouse leaves element 
+`mousemove`  - Mouse moves          
+				2.Keyboard Events
+TYPESCRIPT TYPE:KeyboardEvent
+
+ Event      -When it fires            
+---------- ----------------------- 
+`keydown`  - Key pressed              
+`keyup`   - Key released             
+`keypress- Key pressed (deprecated) 
+				3.Form Events
+TYPESCRIPT TYPE:Event
+Event  -  Description    
+--------------------------
+`submit`-  Form submitted 
+`change`-Value changed  
+ `input` - Value updated  
+
+				4️.Input Events
+
+Used for <input>, <textarea>, <select>.
+TYPESCRIPT TYPES:InputEvent
+
+const input = document.getElementById("name") as HTMLInputElement;
+input.addEventListener("input", (event: Event) => {
+  const target = event.target as HTMLInputElement;
+  console.log(target.value);
+});
+
+				5.Focus Events
+TYPESCRIPT TYPES:FocusEvent
+
+Triggered when an element gains or loses focus.
+ Event   -  Description    
+ -----------------------------
+`focus` - Element focused     
+ `blur`  - Element loses focus 
+
+				6.Clipboard Events
+
+input.addEventListener("paste", (event: ClipboardEvent) => {
+  console.log("Text pasted");
+});
+
+				7️.Drag & Drop Events
+TYPESCRIPT TYPES:DragEvent
+
+const box = document.getElementById("box") as HTMLDivElement;
+box.addEventListener("dragstart", (event: DragEvent) => {
+  console.log("Dragging started");
+});
+
+
+
+				8️.Touch Events (Mobile)
+TYPESCRIPT TYPES:TouchEvent
+
+document.addEventListener("touchstart", (event: TouchEvent) => {
+  console.log(event.touches.length);
+});
+
+				9.Window / UI Events
+TYPESCRIPT TYPE:UIEvent
+|Event  -  Description    
+-------  -------------- 
+`load` -   Page loaded    
+`resize`- Window resized 
+ `scroll`- Page scrolled  
+
+window.addEventListener("resize", (event: UIEvent) => {
+  console.log("Window resized");
+});
+
+				10.Generic Event (Base Event)
+TYPESCRIPT TYPE:Event
+
+document.addEventListener("click", (event: Event) => {
+  console.log(event.type);
+});
+
+				--summary--
+
+ Event Category -Type             
+--------------  ---------------- 
+Mouse        - `MouseEvent`     
+ Keyboard     -   `KeyboardEvent`  
+Form       -     `Event`          
+ Input     -      `InputEvent`     
+ Focus     -      `FocusEvent`     
+Clipboard     -  `ClipboardEvent` 
+ Drag         -  `DragEvent`      
+ Touch     -      `TouchEvent`     
+UI / Window    - `UIEvent`        
+
+
+
+
+
+
+
+
+
+
