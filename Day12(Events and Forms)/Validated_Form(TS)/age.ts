@@ -1,43 +1,59 @@
+// 1️⃣ Get form element
+const form = document.getElementById("ageForm") as HTMLFormElement;
+
+// 2️⃣ Get input elements
 const username = document.getElementById("username") as HTMLInputElement;
-const age = document.getElementById("age") as HTMLInputElement;
-const userError = document.getElementById("userError") as HTMLSpanElement;
-const ageError = document.getElementById("ageError") as HTMLSpanElement;
-const registerBtn = document.getElementById("registerBtn") as HTMLButtonElement;
+const ageInput = document.getElementById("age") as HTMLInputElement;
 
-let isUsernameValid = false;
-let isAgeValid = false;
+// 3️⃣ Get error & message elements
+const nameError = document.getElementById("nameError") as HTMLElement;
+const ageError = document.getElementById("ageError") as HTMLElement;
+const successMsg = document.getElementById("successMsg") as HTMLElement;
 
-/* INPUT EVENT (fires on every change) */
-username.addEventListener("input", (event: Event) => {
-  const value = (event.target as HTMLInputElement).value;
-
-  if (value.length < 5) {
-    userError.textContent = "Username must be at least 5 characters";
-    isUsernameValid = false;
+// 4️⃣ LIVE Name validation
+username.addEventListener("input", () => {
+  if (username.value.trim() === "") {
+    nameError.textContent = "Name is required";
   } else {
-    userError.textContent = "";
-    isUsernameValid = true;
+    nameError.textContent = "";
   }
-
-  checkFormValidity();
 });
 
-/* KEYUP EVENT */
-age.addEventListener("keyup", (event: KeyboardEvent) => {
-  const value = Number((event.target as HTMLInputElement).value);
+// 5️⃣ LIVE Age validation
+ageInput.addEventListener("input", () => {
+  const age = Number(ageInput.value);
 
-  if (value < 18) {
+  if (age < 18) {
     ageError.textContent = "Age must be 18 or above";
-    isAgeValid = false;
   } else {
     ageError.textContent = "";
-    isAgeValid = true;
   }
-
-  checkFormValidity();
 });
 
-/* COMMON FUNCTION */
-function checkFormValidity(): void {
-  registerBtn.disabled = !(isUsernameValid && isAgeValid);
-}
+// 6️⃣ Form submit validation
+form.addEventListener("submit", (event: Event) => {
+  event.preventDefault(); // stop reload
+
+  let isValid = true;
+
+  // Name check
+  if (username.value.trim() === "") {
+    nameError.textContent = "Name is required";
+    isValid = false;
+  }
+
+  // Age check
+  const age = Number(ageInput.value);
+  if (age < 18 || ageInput.value === "") {
+    ageError.textContent = "Valid age (18+) required";
+    isValid = false;
+  }
+
+  // 7️⃣ Success message
+  if (isValid) {
+    successMsg.textContent = "Form submitted successfully 🎉";
+    form.reset();
+  } else {
+    successMsg.textContent = "";
+  }
+});

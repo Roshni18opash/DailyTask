@@ -1,27 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Live Validation</title>
+  <meta charset="UTF-8">
+  <title>Age Validation</title>
+  <link rel="stylesheet" href="age.css">
 </head>
 <body>
-  <h2>User Registration</h2>
 
-  <label>
-    Username:
-    <input type="text" id="username" />
-    <span id="userError" style="color:red"></span>
-  </label>
-  <br><br>
+  <form id="ageForm">
+    <h2>User Details</h2>
 
-  <label>
-    Age:
-    <input type="number" id="age" />
-    <span id="ageError" style="color:red"></span>
-  </label>
-  <br><br>
+    <label>Name</label>
+    <input type="text" id="username">
+    <small id="nameError"></small>
 
-  <button id="registerBtn" disabled>Register</button>
+    <label>Age</label>
+    <input type="number" id="age">
+    <small id="ageError"></small>
+
+    <button type="submit">Submit</button>
+
+    <p id="successMsg"></p>
+  </form>
 
   <script src="age.js"></script>
 </body>
