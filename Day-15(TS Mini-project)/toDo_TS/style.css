@@ -5,7 +5,6 @@ body {
   justify-content: center;
   padding: 50px 20px;
 }
-
 .container {
   background: #fff;
   padding: 30px;
@@ -14,17 +13,14 @@ body {
   max-width: 400px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
-
 h2 {
   text-align: center;
   margin-bottom: 20px;
 }
-
 .input-group {
   display: flex;
   margin-bottom: 20px;
 }
-
 #taskInput {
   flex: 1;
   padding: 10px;
@@ -32,7 +28,6 @@ h2 {
   border-radius: 6px;
   border: 1px solid #ccc;
 }
-
 #addTaskBtn {
   padding: 10px 15px;
   margin-left: 5px;
@@ -42,17 +37,14 @@ h2 {
   border-radius: 6px;
   cursor: pointer;
 }
-
 #addTaskBtn:hover {
   background-color: #0056b3;
 }
-
 #taskList {
   list-style: none;
   padding: 0;
   margin: 0;
 }
-
 .task-item {
   display: flex;
   justify-content: space-between;
@@ -62,17 +54,14 @@ h2 {
   background: #f5f5f5;
   border-radius: 6px;
 }
-
 .task-left {
   display: flex;
   align-items: center;
 }
-
 .task-left span.completed {
   text-decoration: line-through;
   color: #888;
 }
-
 button.delete-btn, button.edit-btn {
   margin-left: 5px;
   padding: 5px 8px;
@@ -80,25 +69,20 @@ button.delete-btn, button.edit-btn {
   border: none;
   cursor: pointer;
 }
-
 button.delete-btn {
   background: #dc3545;
   color: white;
 }
-
 button.delete-btn:hover {
   background: #a71d2a;
 }
-
 button.edit-btn {
   background: #ffc107;
   color: white;
 }
-
 button.edit-btn:hover {
   background: #e0a800;
 }
-
 #clearAllBtn {
   width: 100%;
   padding: 10px;
@@ -108,7 +92,6 @@ button.edit-btn:hover {
   border-radius: 6px;
   cursor: pointer;
 }
-
 #clearAllBtn:hover {
   background-color: #495057;
 }

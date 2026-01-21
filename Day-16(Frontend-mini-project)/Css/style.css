@@ -4,46 +4,35 @@
   box-sizing: border-box;
   font-family: Arial, sans-serif;
 }
-
 body {
   background-color: #f4f6f8;
 }
-
 .dashboard {
   display: flex;
   height: 100vh;
 }
-
-/* Sidebar */
 .sidebar {
   width: 220px;
   background-color: #1f2933;
   color: white;
   padding: 20px;
 }
-
 .sidebar h2 {
   margin-bottom: 20px;
 }
-
 .sidebar ul {
   list-style: none;
 }
-
 .sidebar li {
   padding: 10px 0;
   cursor: pointer;
 }
-
 .sidebar li:hover {
   color: #38bdf8;
 }
-
-/* Main */
 .main {
   flex: 1;
 }
-
 .header {
   background-color: white;
   padding: 15px 20px;
@@ -51,14 +40,12 @@ body {
   justify-content: space-between;
   border-bottom: 1px solid #ddd;
 }
-
 .content {
   padding: 20px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 15px;
 }
-
 .card {
   background-color: white;
   padding: 30px;
