@@ -1,0 +1,16 @@
+					useEffect
+👉 useEffect is used to perform side effects in React, such as:
+API calls
+timers
+subscriptions
+					Basic syntax:
+useEffect(() => {
+  // side-effect code
+}, []);
+
+			API Calling with Types
+type User = {
+  id: number;
+  name: string;
+  email: string;
+};
