@@ -10,7 +10,12 @@ const About = () => {
     <div className="page">
       <section className="hero">
         <h1>Welcome to React-Router About Page</h1>
-        <p>Learn React Router, Components, and Modern UI step by step.</p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, veniam
+          magnam ipsum dolorem ea natus nulla harum nostrum officia repellat
+          voluptatibus. Similique pariatur maxime fuga inventore, architecto
+          exercitationem unde reiciendis?
+        </p>
         <button className="btn">Get Started</button>
         <button className="btn" onClick={() => GotoHome()}>
           Go To ContactPage

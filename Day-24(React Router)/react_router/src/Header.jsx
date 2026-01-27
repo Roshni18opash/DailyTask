@@ -3,7 +3,7 @@ const Header = () => {
   return (
     <>
       <nav className="navbar">
-        <h2 className="logo">React</h2>
+        <h2 className="logo">My DashBoard</h2>
         <div className="nav-links">
           <NavLink to="/" end className="link">
             Home

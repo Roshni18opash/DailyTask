@@ -1,19 +1,27 @@
-import { Outlet } from "react-router-dom";
-import Header from "./Header";
-import "./Home.css";
-
 const Home = () => {
   return (
-    <div className="home">
-      <Header />
-      <Outlet />
+    <>
+      <h1 className="dashboard-title">Dashboard</h1>
 
-      <section className="hero">
-        <h1>Welcome to React-Router Home-Page</h1>
-        <p>Learn React Router, Components, and Modern UI step by step.</p>
-        <button className="btn">Get Started</button>
-      </section>
-    </div>
+      <div className="cards">
+        <div className="card">
+          <h3>Users</h3>
+          <p>1,250</p>
+        </div>
+        <div className="card">
+          <h3>Projects</h3>
+          <p>75</p>
+        </div>
+        <div className="card">
+          <h3>Revenue</h3>
+          <p>$18,400</p>
+        </div>
+        <div className="card">
+          <h3>Tasks</h3>
+          <p>42</p>
+        </div>
+      </div>
+    </>
   );
 };
 
