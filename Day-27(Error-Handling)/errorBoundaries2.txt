@@ -1,0 +1,28 @@
+class base components se error find kr skte he
+function base se nahi
+error not catch in event ,promises async
+opps concept
+remove balnk page other working components work
+individual componet me perticular error set krva component me ek attribute use krna hota he nam he fallback={html}
+exact error btava mate k actual ma thyu su che ae mate <p>{this.state.error.message}</p>
+lifecycle method login errorr mate
+
+window.onerror = function (message, source, error) {
+👉 Ye global JavaScript error handler hai.
+
+Jab bhi:
+
+JavaScript crash hota hai
+
+runtime error aata hai
+
+koi uncaught error hoti hai
+
+➡️ Browser automatically window.onerror call karta hai.
+Ye code flow kaise chalta hai?
+
+1️Browser React app load karta hai
+2 window.onerror pehle register ho jata hai
+3 Agar kahin bhi JS error aata hai
+4️Browser window.onerror() ko call karta hai
+5 Tum console me error dekh sakte ho
