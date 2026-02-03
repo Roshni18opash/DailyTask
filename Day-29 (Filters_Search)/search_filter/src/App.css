@@ -9,7 +9,6 @@ body {
   background-color: #f5f7fa;
   color: #333;
 }
-
 .container {
   max-width: 1000px;
   margin: 50px auto;
@@ -32,7 +31,6 @@ body {
   border: 1px solid #ccc;
   outline: none;
 }
-
 .search-input:focus {
   border-color: #3498db;
 }
@@ -40,32 +38,26 @@ body {
   width: 100%;
   border-collapse: collapse;
 }
-
 .company-table thead {
   background-color: #3498db;
   color: #fff;
 }
-
 .company-table th,
 .company-table td {
   padding: 14px;
   text-align: left;
 }
-
 .company-table th {
   text-transform: uppercase;
   font-size: 14px;
   letter-spacing: 0.5px;
 }
-
 .company-table tbody tr {
   border-bottom: 1px solid #eee;
 }
-
 .company-table tbody tr:nth-child(even) {
   background-color: #f9f9f9;
 }
-
 .company-table tbody tr:hover {
   background-color: #eef6ff;
 }
@@ -79,7 +71,6 @@ body {
   gap: 10px;
   margin-bottom: 25px;
 }
-
 .search-input {
   flex: 1;
 }
@@ -93,11 +84,9 @@ body {
   cursor: pointer;
   transition: background 0.3s ease;
 }
-
 .search-btn:hover {
   background-color: #217dbb;
 }
-
 .search-btn:active {
   transform: scale(0.98);
 }

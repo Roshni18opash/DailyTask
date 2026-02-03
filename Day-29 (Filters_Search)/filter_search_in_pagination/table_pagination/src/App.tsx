@@ -1,7 +1,7 @@
 import Header from "./Header";
 import { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "./App.css";
+// import "./App.css";
 import Home from "./Home";
 
 const App = () => {

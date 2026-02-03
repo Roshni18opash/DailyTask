@@ -4,14 +4,12 @@ import Spinner from "react-bootstrap/Spinner";
 import Pagination from "react-bootstrap/Pagination";
 import Table from "react-bootstrap/Table";
 import "./Home.css";
-
 interface Product {
   id: number;
   title: string;
   price: number;
   thumbnail: string;
 }
-
 interface HomeProps {
   search: string;
 }
