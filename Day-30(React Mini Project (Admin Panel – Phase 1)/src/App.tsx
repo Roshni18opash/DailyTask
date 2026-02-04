@@ -11,7 +11,6 @@ function App() {
     <BrowserRouter>
       <div style={{ display: "flex" }}>
         <Sidebar />
-
         <div style={{ flex: 1 }}>
           <Topbar />
           <Routes>

@@ -4,13 +4,10 @@
   background: #1e293b; 
   padding: 20px;
 }
-
 .sidebar h2 {
   color: #ffffff;
   margin-bottom: 30px;
 }
-
-
 .sidebar a {
   text-decoration: none;     
   color: #cbd5e1;            
@@ -21,14 +18,10 @@
   font-size: 15px;
   transition: all 0.2s ease;
 }
-
-
 .sidebar a:hover {
   background: #334155;
   color: #ffffff;
 }
-
-
 .sidebar a.active {
   background: #2563eb;      
   color: #ffffff;

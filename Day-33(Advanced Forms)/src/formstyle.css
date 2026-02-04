@@ -1,0 +1,99 @@
+.app {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.form-box {
+  width: 320px;
+  margin: auto;
+  padding: 20px;
+  background: #fff;
+  box-shadow: 0 0 10px #ddd;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+}
+
+button {
+  margin-top: 15px;
+  padding: 10px;
+  width: 100%;
+  background: #3f51b5;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.btns {
+  display: flex;
+  gap: 10px;
+}
+
+.steps {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.step {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 2px solid gray;
+  margin: 0 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.step.active {
+  background: #3f51b5;
+  color: white;
+  border-color: #3f51b5;
+}
+
+p {
+  color: red;
+  font-size: 12px;
+}
+
+
+.field {
+  display: flex;
+  align-items: flex-start;
+  margin-top: 15px;
+}
+
+.field label {
+  width: 110px;
+  text-align: right;
+  margin-right: 10px;
+  font-weight: 500;
+}
+
+.field input {
+  width: 180px;
+  padding: 6px;
+}
+
+.error {
+  color: red;
+  font-size: 11px;
+}
+
+button {
+  margin-top: 20px;
+  width: 100%;
+}
+.line {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: #ddd;
+  z-index: 1;
+}
