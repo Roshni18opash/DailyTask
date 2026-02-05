@@ -1,0 +1,65 @@
+1.clean code & its principles
+    *easy to read,understand
+    *safe to modify
+    *fewer bug
+2.meaningfull names
+  ❌:
+  let x = 10;
+  function handleTodo(data: any) {
+  validate(data);
+  save(data);
+  renderUI(data);
+
+  let data: any;
+
+  function addTodo(todo) {
+  return todo.toUpperCase();
+}
+
+}
+
+  ✅: 
+    let maxTodoCount = 10;
+
+    function validateTodo(todo: string) {}
+    function saveTodo(todo: string) {}
+    function renderTodo(todo: string) {}
+
+    let data: string | number;
+
+   function addTodo(todo: string): string {
+   return todo.toUpperCase();
+}
+
+2.Loose TypeScript:
+    *use any
+    *type missing
+    *no optional check
+    *risk on run time error
+Example:
+function addTodo(todo) {
+  return todo.toUpperCase();
+}
+//type unknown-->if number then crash
+3.Strict TS version
+ function addTodo(todo: string): string {
+  return todo.toUpperCase();
+}
+//compile time safety
+//IDE auto suggetion
+//fewer bugs
+4.Loose to Strict
+ *Loose React code:
+    const Todo = (props) => {  // no type of propes
+  return <h1>{props.title}</h1>;
+};
+5.Strict React + TS code
+   type TodoProps = {
+   title: string;
+     };
+  const Todo: React.FC<TodoProps> = ({ title }) => {
+  return <h1>{title}</h1>;
+ };
+ 
+*const [todos, setTodos] = useState<string[]>([]);
+
