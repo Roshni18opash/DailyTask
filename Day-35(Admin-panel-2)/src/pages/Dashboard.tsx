@@ -1,25 +1,22 @@
 const Dashboard = () => {
   return (
-    <>
-      <h1 className="page-title">Dashboard</h1>
-
-      <div className="card-container">
+    <div>
+      <h2>Dashboard</h2>
+      <div className="cards">
         <div className="card">
-          <h3>Users</h3>
+          <h3>Total Users</h3>
           <p>120</p>
         </div>
-
         <div className="card">
-          <h3>Orders</h3>
-          <p>45</p>
+          <h3>Active Users</h3>
+          <p>95</p>
         </div>
-
         <div className="card">
-          <h3>Revenue</h3>
-          <p>₹25,000</p>
+          <h3>Admins</h3>
+          <p>5</p>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
