@@ -1,6 +1,8 @@
 {
   "dependencies": {
-    "express": "^5.2.1"
+    "ejs": "^4.0.1",
+    "express": "^5.2.1",
+    "mongoose": "^9.2.0"
   },
   "name": "project_structure",
   "version": "1.0.0",
@@ -8,11 +10,14 @@
   "main": "index.js",
   "devDependencies": {
     "@types/express": "^5.0.6",
+    "@types/node": "^25.2.2",
+    "nodemon": "^3.1.11",
     "ts-node": "^10.9.2",
+    "ts-node-dev": "^2.0.0",
     "typescript": "^5.9.3"
   },
   "scripts": {
-    "start": "ts-node index.ts",
+    "start": "node index.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
