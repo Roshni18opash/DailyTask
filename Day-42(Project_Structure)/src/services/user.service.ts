@@ -1,6 +1,9 @@
-import { task } from "../models/user.model";
-import { Task } from "../types/task.type";
+import { User } from "../models/user.model";
 
-export const getAllTask=():Task[]=>{
-    return task;
-}
+export const getUsers = () => {
+  return User.find();
+};
+
+export const createUser = (data: any) => {
+  return User.create(data);
+};

@@ -1,8 +1,9 @@
 import { Router } from "express";
-import { getTasks } from "../controllers/user.controller"
+import { showUsers, addUser } from "../controllers/user.controller";
 
 const router = Router();
 
-router.get("/tasks", getTasks);
+router.get("/", showUsers);
+router.post("/insert", addUser);
 
 export default router;
