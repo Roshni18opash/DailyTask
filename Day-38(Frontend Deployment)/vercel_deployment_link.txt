@@ -1,0 +1,10 @@
+					VERCERL
+Cloud platform for frontend apps
+Made by same team as Next.js
+Perfect for React + Vite
+
+ Think of Vercel as:
+“GitHub + Hosting + CI/CD together”
+
+
+https://admin-panel-deployment-pink.vercel.app/login

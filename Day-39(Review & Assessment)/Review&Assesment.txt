@@ -1,0 +1,30 @@
+ 					What is a Demo?
+Demo = showing + explaining, not just clicking.
+
+This is a React + TypeScript Admin Panel with authentication and protected routes.
+Login state is stored in localStorage and routes are protected.
+Dashboard gives high-level system insights.
+CRUD operations handled using React state.
+Logout clears auth state and redirects securely.
+This admin panel uses protected routes and a shared layout for all admin pages
+App.tsx acts as the routing and authentication controller.
+Currently data is static, next step is backend integration
+
+PROTECTED ROUTE REVIEW
+
+if (!isLoggedIn) {
+  return <Navigate to="/login" replace />;
+}
+I created a reusable ProtectedRoute to secure admin pages.
+What AdminLayout does:
+Sidebar
+Header
+Outlet
+
+Why this is professional:
+No repeated UI
+Central layout control
+Easy to scale
+I used nested routing with a shared admin layout.
+Auth state is global
+Page state is local
