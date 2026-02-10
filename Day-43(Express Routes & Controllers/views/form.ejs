@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Form</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+  <form action="/editData" method="POST">
+    <input type="hidden" name="id" value="<%= user.id %>">
+    <table align="center" border cellpadding="10" cellspacing="0">
+      <caption>
+        <h2>User Details Form</h2>
+      </caption>
+      <tr>
+        <th>Name : </th>
+        <td><input type="text" name="name"></td>
+      </tr>
+      <tr>
+        <th>Email : </th>
+        <td><input type="email" name="email"></td>
+      </tr>
+      <tr>
+        <th>Password : </th>
+        <td><input type="password" name="password"></td>
+      </tr>
+      <tr>
+        <th>Gender : </th>
+        <td>
+          <input type="radio" name="gender" value="Male">Male
+          <input type="radio" name="gender" value="Female">Female
+          <input type="radio" name="gender" value="Others">Others
+        </td>
+      </tr>
+      <tr>
+        <th>Hobbies : </th>
+        <td>
+          <input type="checkbox" name="hobby" value="Dancing">Dancing
+          <input type="checkbox" name="hobby" value="Singing">Singing
+          <input type="checkbox" name="hobby" value="Reading">Reading
+        </td>
+      </tr>
+      <tr>
+        <th>Mobile : </th>
+        <td><input type="number" name="mobile"></td>
+      </tr>
+      <tr>
+        <th>City : </th>
+        <td>
+          <select id="" name="city">
+            <option value="">Choose a City</option>
+            <% 
+              let city=["Surat","Vadodara","Bharuch","Vapi"] 
+              city.map((val)=>{
+            %>
+              <option value="<%= val%>">
+                <%= val%>
+              </option>
+            <%
+              })
+            %>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2" align="center"><input type="submit" name="submit" value="Submit"></td>
+      </tr>
+    </table>
+  </form>
+  <table align="center" border cellpadding="10" cellspacing="0" style="text-align: center;">
+    <caption>
+      <h2>User Details</h2>
+    </caption>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Password</th>
+      <th>Gender</th>
+      <th>Hobbies</th>
+      <th>Mobile</th>
+      <th>City</th>
+      <th>Action</th>
+    </tr>
+    <% user.map((val)=>{
+      let {_id, name, email, password, gender, hobby, mobile, city} = val
+      %>
+      <tr>
+        <td>
+          <%= name %>
+        </td>
+        <td>
+          <%= email %>
+        </td>
+        <td>
+          <%= password %>
+        </td>
+        <td>
+          <%= gender %>
+        </td>
+        <td>
+          <%= hobby %>
+        </td>
+        <td>
+          <%= mobile %>
+        </td>
+        <td>
+          <%= city %>
+        </td>
+        <!-- using query -->
+        <td>
+          <a href="/deleteData?id=<%= _id %>">Delete</a>
+          <a href="/editData?id=<%= _id %>">Edit</a>
+        </td>
+        <!-- using parameters -->
+        <!-- <td><a href="/deleteData/<%= _id %>">Delete</a>
+        <a href="/editData/<%= _id %>">Edit</a></td>     -->
+      </tr>
+      <% }) %>
+  </table>
+</body>
+
+</html>

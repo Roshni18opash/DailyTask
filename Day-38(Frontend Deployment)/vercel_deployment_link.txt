@@ -7,4 +7,4 @@ Perfect for React + Vite
 “GitHub + Hosting + CI/CD together”
 
 
-https://admin-panel-deployment-pink.vercel.app/login
+https://admin-panel-deployment-azure.vercel.app/login
