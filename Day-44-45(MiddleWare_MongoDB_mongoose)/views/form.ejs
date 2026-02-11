@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add New Blog</title>
+    <!-- bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- remixicon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css"
+      integrity="sha512-OQDNdI5rpnZ0BRhhJc+btbbtnxaj+LdQFeh0V9/igiEPDiWE2fG+ZsXl0JEH+bjXKPJ3zcXqNyP4/F/NegVdZg=="
+      crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+    </style>
+</head>
+
+<body class="bg-dark">
+  <div class="container">
+    <nav class="navbar navbar-light" style="height: 95px;">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/">
+          <img src="https://cdn.pixabay.com/photo/2016/09/18/03/40/logo-1677364_1280.png"
+            style="height: 110px; width: 200px;">
+        </a>
+        <ul class="nav justify-content-end text-black" style="font-weight: bold; text-decoration: none;">
+          <li class="nav-item">
+            <a class="nav-link active fs-5" aria-current="page" href="/" style="color:yellow;">Blogs</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link fs-5" href="/form" style="color:rgba(255, 0, 0, 0.959);">Add New Blog</a>
+          </li>
+          <div class="dropdown">
+            <button class="btn bg-info" type="button" data-bs-toggle="dropdown" style="border-radius: 20%;">
+              <i class="ri-account-circle-fill" style="color: rgb(248, 250, 252); font-size: 22px;"></i>
+            </button>
+            <ul class="dropdown-menu bg-info">
+              <li><a class="dropdown-item" href="/signup" style="font-size: 18px; font-weight: 600;">Signup</a></li>
+              <li><a class="dropdown-item" href="/login" style="font-size: 18px; font-weight: 600;">Login</a></li>
+              <li><a class="dropdown-item" href="/logout" style="font-size: 18px; font-weight: 600;">Logout</a></li>
+            </ul>
+          </div>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container form-container">
+      <div class="row justify-content-center">
+        <div class="col-md-8">
+          <div class="card" style="width: 700px;">
+            <div class="card-header fs-4 fw-bold" style="text-align: center; background-color: rgb(159, 225, 255);">
+              Blog Contains
+            </div>
+            <div class="card-body">
+              <form action="/submit" method="post" style="font-weight: bold; height: 470px;">
+                <div class="row mb-3">
+                  <label for="title" class="col-sm-2 col-form-label">Blog Title:</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control" id="title" name="title" placeholder="Food Fables">
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <label for="url" class="col-sm-2 col-form-label">Url (image):</label>
+                  <div class="col-sm-10">
+                    <input type="url" class="form-control" id="url" name="image" placeholder="Blog Image Url">
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <label for="bname" class="col-sm-2 col-form-label">Blogger Name:</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control mt-3" id="bname" name="bname" placeholder="Ranveer Brar">
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <label for="type" class="col-sm-2 col-form-label">Blog Category:</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control mt-3" id="type" name="type"
+                      placeholder="Food, Travel, Business, LifeStyle...">
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <label for="date" class="col-sm-2 col-form-label">Posted:</label>
+                  <div class="col-sm-10">
+                    <input type="date" class="form-control" id="date" name="date">
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <label for="dsc" class="col-sm-2 col-form-label">Description:</label>
+                  <div class="col-sm-10">
+                    <textarea name="dsc" id="dsc" class="form-control" placeholder="Description" cols="74"
+                      rows="4"></textarea>
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <label for="submit" class="col-sm-2 col-form-label"></label>
+                  <div class="col-sm-10">
+                    <input type="submit" value="Submit" class="btn fw-bold"
+                      style="background-color: rgb(159, 225, 255); color: black; font-weight: 600;">
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
