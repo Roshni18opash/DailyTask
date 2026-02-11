@@ -21,13 +21,12 @@ app.get("/", (req, res) => {
   })
 });
 
-// store Data
 app.post("/insertData", (req, res) => {
 
   const { name, email, password, gender, hobby, mobile, city } = req.body;
 
   userDB.create({
-    //userId: userId,
+
     name: name,
     email: email,
     password: password,
