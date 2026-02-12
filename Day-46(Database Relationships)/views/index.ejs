@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= projectName %></title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<h1><%= projectName %></h1>
+<h2>Add <%= userLabel %></h2>
+<form action="/add-user" method="POST">
+  <input name="name" placeholder="<%= userLabel %> Name" required /> <br>
+  <input name="email" placeholder="<%= userLabel %> Email" required /> <br>
+  <button>Add <%= userLabel %></button>
+</form>
+<h2>Add <%= postLabel %></h2>
+<form action="/add-post" method="POST">
+  <input name="title" placeholder="Account Name" required /> <br>
+
+  <select name="accountType">
+    <option>Savings</option>
+    <option>Current</option>
+    <option>Salary</option>
+    <option>Fixed Deposit</option>
+  </select> <br>
+
+  <input name="content" placeholder="Account Details" required /> <br>
+  <select name="author">
+    <% users.forEach(user => { %>
+      <option value="<%= user._id %>"><%= user.name %></option>
+    <% }) %>
+  </select> <br>
+
+  <button>Add <%= postLabel %></button>
+</form>
+
+<h2>All <%= postLabel %>s</h2>
+
+<div class="post-container">
+  <% posts.forEach(post => { %>
+    <div class="card">
+      
+      <h3>Account Name: <%= post.title %></h3>
+
+      <p><strong>Account Type:</strong> <%= post.accountType %></p>
+
+      <p><strong>Customer Name:</strong> 
+        <%= post.author ? post.author.name : "Deleted User" %>
+      </p>
+
+      <p><strong>Details:</strong> <%= post.content %></p>
+
+      <a href="/delete-post/<%= post._id %>">
+        <button style="background:rgb(156, 3, 3);">Delete</button>
+      </a>
+
+    </div>
+  <% }) %>
+</div>
+
+</body>
+</html>
