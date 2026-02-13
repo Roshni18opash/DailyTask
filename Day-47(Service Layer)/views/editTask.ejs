@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Task</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+
+    <h1>Edit Task</h1>
+
+    <form action="/update/<%= task._id %>" method="POST">
+
+        <label>Task Title</label>
+        <input type="text" name="title" value="<%= task.title %>" required>
+
+        <label>Select Category</label>
+        <select name="category" required>
+            <% categories.forEach(cat => { %>
+                <option value="<%= cat._id %>" 
+                    <%= task.category.toString() === cat._id.toString() ? "selected" : "" %>>
+                    <%= cat.name %>
+                </option>
+            <% }) %>
+        </select>
+
+        <button class="edt" type="submit">Update Task</button>
+    </form>
+
+    <br>
+    <a href="/">Back</a>
+
+</body>
+</html>

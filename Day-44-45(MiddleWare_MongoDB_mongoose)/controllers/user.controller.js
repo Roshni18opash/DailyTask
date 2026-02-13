@@ -1,5 +1,6 @@
+const { name } = require("ejs");
 const signIn = require("../models/signin.schema");
-
+const { generateToken } = require("../middleware/blogAuth");
 // signup
 const signup = async (req, res) => {
   let { username, email, password } = req.body;
@@ -17,7 +18,6 @@ const signupPage = async (req, res) => {
   await res.render("signup");
 };
 
-
 // login
 const login = async (req, res) => {
   const { username, password } = req.body;
@@ -25,7 +25,15 @@ const login = async (req, res) => {
 
   if (user) {
     if (user.password === password) {
-      res.cookie("id", user.id);  //create cookie
+      // res.cookie("id", user.id);  //create cookie
+      //JWT(json web token)
+      const token = generateToken({
+        id: user.id,
+        name: user.username,
+        email: user.email,
+      });
+      console.log("this is" + user);
+      res.cookie("myfirstjwt", token);
       res.redirect("/");
     } else {
       console.log("Password Invalid");
@@ -35,7 +43,7 @@ const login = async (req, res) => {
     console.log("Invalid Username");
     return res.redirect("/login");
   }
-}
+};
 
 const loginPage = async (req, res) => {
   await res.render("login");
@@ -44,7 +52,14 @@ const loginPage = async (req, res) => {
 // logout
 const logout = (req, res) => {
   res.clearCookie("id");
-  res.redirect('/login');
-}
+  res.redirect("/login");
+};
 
-module.exports = { signup, signupPage, login, loginPage, logout }
+module.exports = {
+  signup,
+  signupPage,
+  login,
+  loginPage,
+  logout,
+  generateToken,
+};

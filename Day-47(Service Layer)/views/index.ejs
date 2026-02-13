@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Layer</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <h1>Task Manager</h1>
+
+<a href="/add">+ Add Task</a>
+<a href="/category/add">+ Add Category</a>
+
+<div class="table-container">
+    <table class="table-task">
+  <tr>
+    <th>Title</th>
+    <th>Category</th>
+    <th>Status</th>
+    <th>Actions</th>
+  </tr>
+
+  <% tasks.forEach(task => { %>
+   <tr>
+
+      <td><%= task.title %></td>
+      <td><%= task.category ? task.category.name : "No Category" %></td>
+      <td>
+  <a href="/toggle/<%= task._id %>"
+     class="<%= task.completed ? 'btn-complete' : 'btn-pending' %>">
+    <%= task.completed ? "Completed" : "Pending" %>
+  </a>
+</td>
+
+      <td>
+        <a href="/edit/<%= task._id %>" class="edt">Edit</a>
+        <a href="/delete/<%= task._id %>" class="dlt">Delete</a>
+      </td>
+    </tr>
+  <% }) %>
+</table>
+
+</div>
+</body>
+</html>
