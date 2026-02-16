@@ -15,7 +15,7 @@ app.use(express.urlencoded({ extended: true })); //for read xwwwformurl encoded 
 app.use(cookieParser());
 app.use((req, res, next) => {
   const token = req.cookies.myfirstjwt;
-
+  //if valid, saves decoded user info to res.locals.user → available in all EJS templates.If invalid/missing, sets res.locals.user = null.
   if (token) {
     try {
       const decoded = require("jsonwebtoken").verify(

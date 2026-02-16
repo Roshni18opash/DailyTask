@@ -22,18 +22,18 @@ const {
 } = require("../controllers/user.controller");
 const router = Router();
 
-router.get("/", isAuth, index);
+router.get("/", isAuth, index); //only logged user can see homepage
 
 // Add blog (admin + manager)
 router.get("/form", isAuth, checkRole(["admin", "manager"]), form);
-
+//above is Only admin & manager can access the form to add blogs.
 router.post(
   "/submit",
   isAuth,
   checkRole(["admin", "manager"]),
   formAuth,
   submit,
-);
+); //protected by role check and form validation
 
 // Delete blog (admin only)
 router.get("/deleteData/:id", isAuth, checkRole(["admin"]), deleteData);
@@ -48,7 +48,7 @@ router.post(
   formAuth,
   editData,
 );
-
+//for user authentication
 router.get("/signup", signupPage);
 router.post("/signup", singAuth, signup);
 
