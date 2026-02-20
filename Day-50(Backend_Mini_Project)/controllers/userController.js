@@ -3,36 +3,26 @@ const User = require("../models/userModel");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 
-//@description Register User
-//@route POST /api/users/register
-//@access public
+//method: POST
+//http://localhost:8080/api/users/register
 const registerUser = asyncHandler(async (req, res) => {
   const { username, email, password } = req.body;
-
-  // ✅ Validation
   if (!username || !email || !password) {
     res.status(400);
     throw new Error("All fields are mandatory!");
   }
-
-  // ✅ Check if user already exists
   const userAvailable = await User.findOne({ email });
   if (userAvailable) {
     res.status(400);
     throw new Error("User already registered!");
   }
-
-  // ✅ Hash password
   const hashPassword = await bcrypt.hash(password, 10);
-
-  // ✅ Create user
   const user = await User.create({
     username,
     email,
     password: hashPassword,
   });
 
-  // ✅ Response
   if (user) {
     res.status(201).json({
       _id: user.id,
@@ -45,9 +35,8 @@ const registerUser = asyncHandler(async (req, res) => {
   }
 });
 
-//@description Login User
-//@route POST /api/users/login
-//@access public
+//POST
+//http://localhost:8080/api/users/login
 const loginUser = asyncHandler(async (req, res) => {
   const { email, password } = req.body;
 
@@ -78,9 +67,6 @@ const loginUser = asyncHandler(async (req, res) => {
   }
 });
 
-//@description Current user Info
-//@route GET /api/users/current
-//@access private
 const currentUser = asyncHandler(async (req, res) => {
   res.status(200).json(req.user);
 });
@@ -95,7 +81,7 @@ const getUserById = asyncHandler(async (req, res) => {
 
   res.status(200).json(user);
 });
-
+//http://localhost:8080/api/users/69970490edb4254b91f93e24
 const updateUser = asyncHandler(async (req, res) => {
   const user = await User.findById(req.params.id);
 
@@ -110,15 +96,16 @@ const updateUser = asyncHandler(async (req, res) => {
   res.status(200).json(updatedUser);
 });
 //delete
+//http://localhost:8080/api/users/69970490edb4254b91f93e24
 const deleteUser = asyncHandler(async (req, res) => {
-  const user = await User.findById(req.params.id);
+  const user = await User.findByIdAndDelete(req.params.id);
 
   if (!user) {
     res.status(404);
     throw new Error("User not found");
   }
 
-  await user.deleteOne();
+  //  await user.findByIdAndDelete();
 
   res.status(200).json({ message: "User deleted successfully" });
 });
