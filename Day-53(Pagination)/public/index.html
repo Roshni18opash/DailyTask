@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>untitled</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h2>Pagination (Scalable API)</h2>
+
+<div class="controls">
+  <input type="number" id="page" placeholder="Page" />
+  <input type="number" id="limit" placeholder="Limit" />
+  <button onclick="loadProducts()">check</button>
+</div>
+
+<div id="products"></div>
+
+<div class="pagination">
+  <button onclick="prevPage()">Previous</button>
+  <span id="pageInfo"></span>
+  <button onclick="nextPage()">Next</button>
+</div>
+
+<script>
+let currentPage = 1;
+let totalPages = 1;
+
+async function loadProducts(page = 1) {
+  const limit = document.getElementById("limit").value || 5;
+
+  const res = await fetch(`/api/products?page=${page}&limit=${limit}`);
+  const data = await res.json();
+
+  currentPage = data.currentPage;
+  totalPages = data.totalPages;
+
+  document.getElementById("pageInfo").innerText =
+    `Page ${currentPage} of ${totalPages}`;
+
+  const container = document.getElementById("products");
+  container.innerHTML = "";
+
+  data.Products.forEach(product => {
+    container.innerHTML += `
+      <div class="card">
+        <h4>${product.name}</h4>
+        <p>Price: $${product.price}</p>
+        <p>Company: ${product.company}</p>
+      </div>
+    `;
+  });
+}
+
+function nextPage() {
+  if (currentPage < totalPages) {
+    loadProducts(currentPage + 1);
+  }
+}
+
+function prevPage() {
+  if (currentPage > 1) {
+    loadProducts(currentPage - 1);
+  }
+}
+
+loadProducts();
+</script>
+
+</body>
+</html>
