@@ -6,12 +6,11 @@ require("dotenv").config();
 
 const PORT = process.env.PORT || 5000;
 
-// 👇 NEW LINE
 app.use(express.static("./public"));
 
 app.use("/api/products", products_routes);
 
-const start = async () => {
+const server = async () => {
   try {
     await connectDB();
     app.listen(PORT, () => {
@@ -22,4 +21,4 @@ const start = async () => {
   }
 };
 
-start();
+server();

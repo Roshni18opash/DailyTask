@@ -1,17 +1,34 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>untitled</title>
+  <title>Products</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<h2>Pagination (Scalable API)</h2>
+<h2>Scalable Products API</h2>
 
 <div class="controls">
-  <input type="number" id="page" placeholder="Page" />
+  <input type="text" id="search" placeholder="Search name" />
+  
+  <select id="company">
+    <option value="">All Companies</option>
+    <option value="apple">Apple</option>
+    <option value="samsung">Samsung</option>
+    <option value="dell">Dell</option>
+    <option value="mi">Mi</option>
+  </select>
+
+  <select id="sort">
+    <option value="">Default</option>
+    <option value="price">Price Low → High</option>
+    <option value="-price">Price High → Low</option>
+    <option value="name">Name A → Z</option>
+    <option value="-name">Name Z → A</option>
+  </select>
+
   <input type="number" id="limit" placeholder="Limit" />
-  <button onclick="loadProducts()">check</button>
+  <button onclick="loadProducts()">Apply</button>
 </div>
 
 <div id="products"></div>
@@ -27,9 +44,19 @@ let currentPage = 1;
 let totalPages = 1;
 
 async function loadProducts(page = 1) {
+
+  const search = document.getElementById("search").value;
+  const company = document.getElementById("company").value;
+  const sort = document.getElementById("sort").value;
   const limit = document.getElementById("limit").value || 5;
 
-  const res = await fetch(`/api/products?page=${page}&limit=${limit}`);
+  let url = `/api/products?page=${page}&limit=${limit}`;
+
+  if (search) url += `&name=${search}`;
+  if (company) url += `&company=${company}`;
+  if (sort) url += `&sort=${sort}`;
+
+  const res = await fetch(url);
   const data = await res.json();
 
   currentPage = data.currentPage;
@@ -41,7 +68,7 @@ async function loadProducts(page = 1) {
   const container = document.getElementById("products");
   container.innerHTML = "";
 
-  data.Products.forEach(product => {
+  data.products.forEach(product => {
     container.innerHTML += `
       <div class="card">
         <h4>${product.name}</h4>

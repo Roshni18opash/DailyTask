@@ -1,14 +1,3 @@
-// const mongoose = require("mongoose");
-
-// uri = "mongodb://localhost:27017/Pagination";
-
-// const connectDB = () => {
-//   return mongoose.connect(uri, {
-//     useNewUrlParser: true,
-//     useUnifiedTopology: true,
-//   });
-// };
-// module.exports = connectDB;
 const mongoose = require("mongoose");
 
 const connectDB = async () => {

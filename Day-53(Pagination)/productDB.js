@@ -7,7 +7,7 @@ const start = async () => {
     await connectDB(process.env.CONNECTION_STRING);
     await Product.deleteMany();
     await Product.create(ProductJson);
-    console.log("successfully completed to get product data");
+    console.log("get all data!");
   } catch (error) {
     console.log(error);
   }
