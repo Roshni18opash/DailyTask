@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Edit Company</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<h1>Edit Company</h1>
+
+<form method="POST" action="/companies/edit/<%= company._id %>">
+  <input name="companyName" value="<%= company.companyName %>" />
+  <input name="website" value="<%= company.website %>" />
+<select name="industry" required>
+  <option value="">Select Industry</option>
+
+  <option value="Technology"
+    <%= company.industry === "Technology" ? "selected" : "" %>>
+    Technology
+  </option>
+
+  <option value="Finance"
+    <%= company.industry === "Finance" ? "selected" : "" %>>
+    Finance
+  </option>
+
+  <option value="Healthcare"
+    <%= company.industry === "Healthcare" ? "selected" : "" %>>
+    Healthcare
+  </option>
+
+  <option value="Education"
+    <%= company.industry === "Education" ? "selected" : "" %>>
+    Education
+  </option>
+
+  <option value="IT Services"
+    <%= company.industry === "IT Services" ? "selected" : "" %>>
+    IT Services
+  </option>
+
+  <option value="E-commerce"
+    <%= company.industry === "E-commerce" ? "selected" : "" %>>
+    E-commerce
+  </option>
+
+  <option value="Software"
+    <%= company.industry === "Software" ? "selected" : "" %>>
+    Software
+  </option>
+
+  <option value="FinTech"
+    <%= company.industry === "FinTech" ? "selected" : "" %>>
+    FinTech
+  </option>
+
+  <option value="Marketing"
+    <%= company.industry === "Marketing" ? "selected" : "" %>>
+    Marketing
+  </option>
+
+  <option value="Consulting"
+    <%= company.industry === "Consulting" ? "selected" : "" %>>
+    Consulting
+  </option>
+
+  <option value="Food Delivery"
+    <%= company.industry === "Food Delivery" ? "selected" : "" %>>
+    Food Delivery
+  </option>
+
+  <option value="Automobile"
+    <%= company.industry === "Automobile" ? "selected" : "" %>>
+    Automobile
+  </option>
+
+  <option value="Construction"
+    <%= company.industry === "Construction" ? "selected" : "" %>>
+    Construction
+  </option>
+
+  <option value="Energy"
+    <%= company.industry === "Energy" ? "selected" : "" %>>
+    Energy
+  </option>
+
+  <option value="Other"
+    <%= company.industry === "Other" ? "selected" : "" %>>
+    Other
+  </option>
+</select>
+ <select name="companySize" required>
+  <option value="">Select Size</option>
+
+  <option value="1-10"
+    <%= company.companySize === "1-10" ? "selected" : "" %>>
+    1-10
+  </option>
+
+  <option value="11-50"
+    <%= company.companySize === "11-50" ? "selected" : "" %>>
+    11-50
+  </option>
+
+  <option value="51-200"
+    <%= company.companySize === "51-200" ? "selected" : "" %>>
+    51-200
+  </option>
+
+  <option value="201-500"
+    <%= company.companySize === "201-500" ? "selected" : "" %>>
+    201-500
+  </option>
+
+  <option value="501-1000"
+    <%= company.companySize === "501-1000" ? "selected" : "" %>>
+    501-1000
+  </option>
+
+  <option value="1000+"
+    <%= company.companySize === "1000+" ? "selected" : "" %>>
+    1000+
+  </option>
+</select>
+  <button type="submit" class="updt">Update</button>
+</form>
+
+<a href="/" style="font-size:x-large;"><span style="color: rgb(35, 43, 158); font-size:xx-large;">⬅</span> Back</a>
+
+</body>
+</html>
