@@ -1,0 +1,35 @@
+[object Object] - [undefined]: undefined
+2026-03-02 12:52:48 - [info]: http://localhost:8080
+2026-03-02 12:54:40 - [info]: http://localhost:8080
+2026-03-02 13:00:47 - [info]: http://localhost:8080
+    
+2026-03-02 13:02:07 - [info]: http://localhost:8080
+    }
+2026-03-02 13:07:47 - [info]: http://localhost:8080
+    }
+2026-03-02 13:07:51 - [info]: User registered successfully with email: roshni@gmail.com
+    }
+2026-03-02 13:08:05 - [info]: User logged in successfully with email: roshni@gmail.com
+    }
+2026-03-02 13:08:12 - [error]: Incorrect password for email: roshni@gmail.com. Login failed.
+    }
+2026-03-02 13:09:29 - [info]: http://localhost:8080
+
+2026-03-02 13:09:59 - [warn]: Oops! User not found. Login failed: roshni@gmail.com
+
+2026-03-02 13:10:10 - [warn]: Oops! User not found. Login failed: roshni@gmail.com
+
+2026-03-02 13:10:23 - [info]: User registered successfully with email: roshni@gmail.com
+
+2026-03-02 13:10:51 - [error]: Incorrect password for email: roshni@gmail.com. Login failed.
+
+2026-03-02 13:15:38 - [info]: http://localhost:8080
+{"level":"info","message":"http://localhost:8080","timestamp":"2026-03-02 13:21:14"}
+{"level":"info","message":"User registered successfully with email: roshni@gmail.com","timestamp":"2026-03-02 13:21:31"}
+{"level":"info","message":"User registered successfully with email: roshni@gmail.com","timestamp":"2026-03-02 13:21:36"}
+{"level":"error","message":"Incorrect password for email: roshni@gmail.com. Login failed.","timestamp":"2026-03-02 13:21:44"}
+{"level":"info","message":"User registered successfully with email: roshni@gmail.com","timestamp":"2026-03-02 13:22:01"}
+{"level":"error","message":"Incorrect password for email: roshni@gmail.com. Login failed.","timestamp":"2026-03-02 13:22:09"}
+{"level":"warn","message":"Oops! User not found. Login failed: roshni16@gmail.com","timestamp":"2026-03-02 13:23:42"}
+{"level":"info","message":"User registered successfully with email: roshni16@gmail.com","timestamp":"2026-03-02 13:23:48"}
+{"level":"info","message":"User logged in successfully with email: roshni16@gmail.com","timestamp":"2026-03-02 13:23:55"}
