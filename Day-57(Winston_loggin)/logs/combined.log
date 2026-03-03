@@ -33,3 +33,17 @@
 {"level":"warn","message":"Oops! User not found. Login failed: roshni16@gmail.com","timestamp":"2026-03-02 13:23:42"}
 {"level":"info","message":"User registered successfully with email: roshni16@gmail.com","timestamp":"2026-03-02 13:23:48"}
 {"level":"info","message":"User logged in successfully with email: roshni16@gmail.com","timestamp":"2026-03-02 13:23:55"}
+{"level":"info","message":"http://localhost:8080","timestamp":"2026-03-02 16:18:19"}
+{"level":"info","message":"User registered successfully with email: roshni126@gmail.com","timestamp":"2026-03-02 16:18:52"}
+{"level":"info","message":"User registered successfully with email: roshni1@gmail.com","timestamp":"2026-03-02 16:19:04"}
+{"level":"warn","message":"Oops! User not found. Login failed: roshni19@gmail.com","timestamp":"2026-03-02 16:28:42"}
+{"level":"warn","message":"Oops! User not found. Login failed: roshni19@gmail.com","timestamp":"2026-03-02 16:29:03"}
+{"level":"warn","message":"Oops! User not found. Login failed: roshni19@gmail.com","timestamp":"2026-03-02 16:29:15"}
+{"level":"warn","message":"Oops! User not found. Login failed: roshni19@gmail.com","timestamp":"2026-03-02 16:29:23"}
+{"level":"warn","message":"Oops! User not found. Login failed: roshni19@gmail.com","timestamp":"2026-03-02 16:29:34"}
+{"level":"info","message":"http://localhost:8080","timestamp":"2026-03-02 16:30:19"}
+{"level":"info","message":"http://localhost:8080","timestamp":"2026-03-03 13:13:48"}
+{"level":"error","message":"Missing required information. Registration not completed.","timestamp":"2026-03-03 13:20:30"}
+{"level":"info","message":"User registered successfully with email: kkk@gmail.com","timestamp":"2026-03-03 13:21:10"}
+{"level":"info","message":"User logged in successfully with email: kkk@gmail.com","timestamp":"2026-03-03 13:22:33"}
+{"level":"info","message":"http://localhost:8080","timestamp":"2026-03-03 13:22:47"}
