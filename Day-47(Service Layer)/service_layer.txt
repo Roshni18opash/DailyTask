@@ -1,0 +1,55 @@
+		What is Service Layer?
+Service Layer = A separate file where you write:
+Business logic
+Database operations
+Data processing rules
+		Controller should:
+Only handle request & response
+		Service should:
+Handle logic
+
+		Without Service Layer
+Controller:
+
+Get request
+Validate data
+Talk to DB
+Apply logic
+Send response
+
+👉 Controller becomes messy.
+
+With service layer flow becomes:
+Routes → Controller → Service → Model
+
+Controller:-
+Gets request
+Calls service
+Sends response
+
+Service:-
+Talks to database
+Applies business logic
+Much cleaner
+
+		Simple Rule to Remember
+Controller = "Traffic Police"  (handles request/response)
+Service = "Brain"  (business logic)
+Model = "Database communicator" 💾
+
+
+
+
+“When a user submits a form to add a task:
+
+Browser sends a POST request to /add.
+
+Route maps it to createTask in the controller.
+
+Controller calls the service layer createTask function.
+
+Service layer saves the task in MongoDB.
+
+Controller redirects the user to / to see updated tasks.”
+
+Controller does NOT directly talk to database anymore.

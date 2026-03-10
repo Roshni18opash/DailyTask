@@ -1,0 +1,58 @@
+<!--  What are Functions?
+  Functions are fundamental building blocks in all programming.
+  Functions are reusable block of code designed to perform a particular task.
+  Functions are executed when they are "called" or "invoked". 
+
+Why Functions?
+Functions enable better code organization and efficiency.
+With functions you can reuse code.
+You can write code that can be used many times.
+You can use the same code with different arguments, to produce different results.
+
+Arrow Functions
+Arrow functions were introduced in ES6.
+Arrow functions allow us to write shorter function syntax:
+-->
+
+<!-- This is basic Function -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functions</title>
+</head>
+<body>
+    <p id="function" style="font-size: larger;color: rgb(24, 21, 21);"></p>
+    <p id="tofahrenheit" style="font-size: larger;color: rgb(19, 20, 18);"></p>
+    <p id="myfun" style="font-size: larger;color: rgb(19, 20, 18);"></p>
+      <p id="hello" style="font-size: larger;color: rgb(19, 20, 18);"></p>
+    <script>
+        function add(a,b) {
+            return a+b;
+        }
+        let addition= add(2,3)
+        document.getElementById("function").innerHTML="The Addition is"+ " "+  addition
+
+
+        function tofahrenheit (a) {
+            return (a*9/5)+32;
+        }
+        let value= tofahrenheit(20);
+        document.getElementById("tofahrenheit").innerHTML="The Conversion from Celsius to fahrenheit is:"+value 
+
+        // Arrow Function(Argument & Parameter)
+        let myfunction=(name,age)=>{
+            return `Hello! My Name is ${name} and My age is ${age}`
+
+        }
+        document.getElementById("myfun").innerHTML=myfunction("Roshni",30)
+        //Arrow Function with parameter
+        let hello=(val)=>{
+           return "Hello" +val;
+        }
+        document.getElementById("hello").innerHTML=hello("World!")
+
+    </script>
+</body>
+</html>

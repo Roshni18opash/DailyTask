@@ -1,0 +1,62 @@
+				What is Local Storage?
+Local Storage is a browser feature that allows you to store data permanently in the user’s browser.
+Key Points:
+Data is stored as key–value pairs
+Data does NOT disappear when the page refreshes
+Data stays even after closing the browser
+Maximum size ≈ 5MB
+Data is stored as strings only
+
+				Example use cases:
+Login status
+Theme (dark/light mode)
+User preferences
+Cart items in shopping apps
+
+			Difference Between Local Storage & Session Storage
+
+| Feature           Local Storage | Session Storage         
+| ---------------- ------------- ----------------------- 
+| Data persistence | Permanent     | Removed when tab closes |
+| Scope                       | All tabs      | Only one tab            |
+| Size                            | ~5MB          | ~5MB                    |
+| Data type                | String only   | String only             |
+
+				Local Storage Syntax (JavaScript):
+localStorage.setItem("key", "value");
+localStorage.getItem("key");
+localStorage.removeItem("key");
+localStorage.clear();
+			Using Local Storage in TypeScript
+				Store Data
+localStorage.setItem("username", "Roshni");
+				Get data
+const userName: string | null = localStorage.getItem("username");
+If the key exists → returns string
+If the key does NOT exist → returns null
+
+				LocalStorage Syntax in JS
+localStorage.setItem("key", "value");
+localStorage.getItem("key");
+localStorage.removeItem("key");
+localStorage.clear();
+				----LS in TS----
+				Store Data
+localStorage.setItem("username", "Roshni");
+
+				Get Data
+const userName: string | null = localStorage.getItem("username");
+			Remove and clear data
+localStorage.removeItem("name");------->remove 1 item
+localStorage.clear();--------->clear all Local storage (it clear everything)
+
+Local Storage stores string data
+TypeScript requires null safety
+Objects → JSON
+Use interfaces for type safety
+Common in real-world projects
+
+
+
+
+

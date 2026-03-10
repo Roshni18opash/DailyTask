@@ -1,0 +1,12 @@
+dashboard-project/
+│
+├── index.html
+├── css/
+│   └── style.css
+├── ts/
+│   └── main.ts
+├── js/
+│   └── main.js
+└── assets/
+    └── images/
+mongodb+srv://roshni:12345@cluster0.yj3ae4z.mongodb.net/

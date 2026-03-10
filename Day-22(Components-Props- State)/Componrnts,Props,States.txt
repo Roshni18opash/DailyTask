@@ -1,0 +1,44 @@
+				Functional Components
+
+👉 In React, functional components are normal JavaScript/TypeScript functions that return JSX.
+Example:
+function Hello() {
+  return <h1>Hello React</h1>;
+}
+
+✔ Simple
+✔ Easy to reuse
+✔ Most commonly used in companies
+
+				Typed Props (Very Important in TS)
+
+👉 Props are data passed from parent to child component
+In TypeScript, we define the shape of props using type or interface
+Example:
+
+type UserProps = {
+  name: string;
+  age: number;
+};
+function User({ name, age }: UserProps) {
+  return <p>{name} - {age}</p>;
+}
+
+✔ Prevents wrong data
+✔ Improves code safety
+✔ Interview favorite topic
+
+				useState with Types
+
+👉 useState is used to store component state
+In TypeScript, we tell:
+state kis type ka data rakhega
+Example:
+
+const [count, setCount] = useState<number>(0);
+
+✔ count is always number
+✔ No runtime bugs
+✔ Auto-suggestions in editor
+
+“I created a reusable counter component using React functional components. Props and state are fully typed using TypeScript to ensure type safety and prevent runtime errors.”

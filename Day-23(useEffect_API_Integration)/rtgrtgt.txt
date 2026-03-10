@@ -1,0 +1,24 @@
+					 React Router Setup
+React Router helps us create multiple pages in a React app without reloading the browser.
+install:
+npm install react-router-dom
+				Basic SetUp in main.tsx
+import { BrowserRouter } from "react-router-dom";
+root.render(
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>
+);
+				Typed Route Params (TypeScript)
+Route parameters are dynamic values in URLs.
+	Example:
+/profile/:id
+	Type-safe way:
+import { useParams } from "react-router-dom";
+type Params = {
+  id: string;
+};
+const Profile = () => {
+  const { id } = useParams<Params>();
+  return <h2>User ID: {id}</h2>;
+};

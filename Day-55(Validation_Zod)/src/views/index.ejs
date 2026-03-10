@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Companies</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<h1>Company List</h1>
+
+
+
+<table style="width: fit-content;">
+  <tr>
+    <th>Name</th>
+    <th style="width: 30%;">Website</th>
+    <th>Industry</th>
+    <th>Size</th>
+    <th style="width: 8%;">Action</th>
+  </tr>
+
+  <% companies.forEach(company => { %>
+    <tr>
+      <td><%= company.companyName %></td>
+     <td>
+  <a href="<%= company.website %>" target="_blank" class="link">
+    <%= company.website %>
+  </a>
+</td>
+      <td><%= company.industry %></td>
+      <td><%= company.companySize %></td>
+      <td class="action-buttons">
+  <a href="/companies/edit/<%= company._id %>" class="btn-small edit">
+    Edit
+  </a>
+
+  <a href="/companies/delete/<%= company._id %>" class="btn-small delete">
+    Delete
+  </a>
+</td>
+    </tr>
+  <% }) %>
+
+</table>
+<br>
+<a href="/companies/add" class="btn">Add Company</a>
+</body>
+</html>

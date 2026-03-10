@@ -1,0 +1,140 @@
+										WINSTON
+				
+Winston is a popular open-source logging library for Node.js. It provides a flexible, transport-based system for capturing and managing log messages across various outputs. Widely used in server-side JavaScript applications, Winston emphasizes configurability, structured logging, and extensibility.
+WINSTON LOG LEVEL
+error
+warn
+info
+http
+verbose
+debug
+silly
+
+
+If your app is running on a live server and an error happens at 2 AM…
+Will you sit and watch terminal?
+How will you know what error happened?
+
+You use:
+console.log("User logged in")
+Right?
+Now think 
+If your app goes to production and thousands of users log in…
+ Is console.log() enough?
+ Can it save logs in a file?
+ Can it separate error logs from normal logs?
+This is where Winston comes in.
+
+What is Winston?
+Winston is a logging library for Node.js.
+It helps you:
+Save logs in files
+Separate error logs
+Add timestamps
+Control log levels (info, error, warn)
+
+Logging kya hota hai?
+Logging ka matlab hai —
+ App ke andar jo bhi important cheezein ho rahi hain (login, error, server start, API call), unka record rakhna.
+Jaise CCTV camera record rakhta hai,
+waise hi logging system backend ka record rakhta hai.
+
+Problem with console.log()
+console.log() sirf terminal me dikhata hai.
+ File me save nahi karta
+ Error alag se store nahi karta
+ Time automatic nahi lagata
+Production app me ye enough nahi hota.
+Winston kya hai?
+
+Winston ek Node.js logging library hai.
+Ye:
+ Logs ko file me save karta hai
+ Error aur info alag karta hai
+ Time stamp add karta hai
+Professional backend banata hai
+
+structuire:
+const logger = winston.createLogger({
+   level: "info" //log ka type save krta he
+});
+
+Winston me different log types hote hain:
+
+error  (jab error aaye)
+
+warn  (warning)
+
+info ℹ (normal information)
+
+Winston me ek cheez hoti hai jise bolte hain transport.
+Ye decide karta hai log kahan jayega (console ya file).
+debug 🛠 (developer testing)//debug record nai thy
+
+
+Agar hum chahte hain ki saare logs app.log naam ki file me save ho…
+Hint 
+Winston me ek cheez hoti hai jise bolte hain transport.
+Ye decide karta hai log kahan jayega (console ya file).
+
+Transport ka kaam kya hoga?
+Log kahan store hoga decide karna
+
+Level → Kaunsa type ka log (info, error, warn)
+Transport → Log kahan jayega (console ya file)
+
+Matlab:
+
+Console transport → Terminal me dikhayega
+
+File transport → File me save karega
+
+Add transport in winston below 
+transports: [
+   new winston.transports.Console(),
+   new winston.transports.File({ filename: "app.log" })
+]
+LOGGING:App me jo bhi important events ho rahe hain unka record banana
+Server start hua
+User login hua
+Password galat tha
+Database connect hua
+Error aaya
+ 
+TRANSPORT: log kahan save hoga decide karta hai (Transport sirf file save nahi karta —
+ye decide karta hai:
+Console me dikhana
+File me save karna
+Ya dono)
+
+LEVEL → log ka type dekhta hai (info, error, warn)
+
+timestrapt: konsi error,info kab aayi a time ke sath btata he
+Bilkul sahi — difficult hoga.
+Isliye production app me:
+✔ Timestamp zaroori hota hai
+✔ Error ka exact time pata hona chahiye
+✔ Debugging easy ho jata hai 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

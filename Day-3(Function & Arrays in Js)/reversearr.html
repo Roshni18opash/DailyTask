@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Reverse Arrays</title>
+  </head>
+
+  <body
+    style="
+      display: flex;
+      margin: 0;
+      height: 100vh;
+      justify-content: center;
+      align-items: center;
+      background: #0f172a;
+      font-family: Arial, sans-serif;
+    "
+  >
+    <div
+      id="card"
+      style="
+        width: 55%;
+        height: 40%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #020617;
+        border-radius: 12px;
+        box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+      "
+    >
+      <p
+        id="arr"
+        style="
+          color: #e5e7eb;
+          font-size: 22px;
+          text-align: center;
+          line-height: 1.6;
+        "
+      ></p>
+    </div>
+
+    <script>
+      let reverse_array = (arr) => {
+        let result = [];
+        let j = 0;
+        for (let i = arr.length - 1; i >= 0; i--) {
+          result[j] = arr[i];
+          j++;
+        }
+        return result;
+      };
+
+      let num = [ 66, 55, 44, 33, 22, 11];
+      let reverseNum = reverse_array(num);
+
+      document.getElementById("arr").innerHTML =
+        `The Reverse Array of <span style="color:#38bdf8;">[${num}]</span><br>
+         is : <span style="font-weight:bold;color:#22c55e;">[${reverseNum}]</span>`;
+    </script>
+  </body>
+</html>

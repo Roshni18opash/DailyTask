@@ -1,0 +1,97 @@
+					UNION TYPE
+Union types are used when a value can be more than a single type.
+Such as when a property would be string or number.
+Using the | we are saying our parameter is a string or number:
+					Basic Syntax
+
+let value: number | string;
+value = 10;       // 
+value = "Hello";  // 
+value = true;     //  Error
+
+					Union Type in Function Parameter
+function printId(id: number | string) {
+  console.log(id);
+}
+
+printId(101);
+printId("A102");
+					Union Type in Function Return
+function getResult(flag: boolean): string | number {
+  return flag ? "Success" : 0;
+}
+
+					Union Type with Objects (Very Important)
+type SuccessResponse = {
+  status: "success";
+  data: string;
+};
+
+type ErrorResponse = {
+  status: "error";
+  message: string;
+};
+
+type ApiResponse = SuccessResponse | ErrorResponse;
+
+function handleResponse(res: ApiResponse) {
+  if (res.status === "success") {
+    console.log(res.data);
+  } else {
+    console.log(res.message);
+  }
+}
+					Union of Literal Types (Very Common)
+type Direction = "up" | "down" | "left" | "right";
+
+function move(dir: Direction) {
+  console.log("Moving", dir);
+}
+move("up");    // 
+move("right"); // 
+move("top");   //  Error
+					Union Type with Arrays
+let mix: (number | string)[] = [1, "two", 3];
+					Union Type Narrowing (VERY IMPORTANT)
+
+TypeScript needs to narrow the type before using type-specific methods.
+function printValue(value: number | string) {
+  if (typeof value === "string") {
+    console.log(value.toUpperCase());
+  } else {
+    console.log(value.toFixed(2));
+  }
+}
+UNION TYPE VS ENUM:
+	union type:
+type Status = "success" | "error" | "loading";
+	enum:
+enum Status {
+  Success,
+  Error,
+  Loading
+}
+ Use union types for simple fixed values
+ Use enum for reusable constants
+
+					UTILITY fUNCTIONS
+Utility functions are small, reusable helper functions that perform common tasks and can be used anywhere in the project.
+ They do one job only and do it cleanly.
+A utility function is a reusable function that performs a common operation and helps keep code clean and maintainable.
+ex:
+function isValidEmail(email: string): boolean {
+  return email.includes("@") && email.includes(".");
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Update User Data  </title>
+  <link rel="stylesheet" href="/style.css">
+
+</head>
+<body>
+  <form action="/editData" method="post" >
+     <input type="hidden" name="id" value="<%= user._id %>">
+    <table align="center" border cellpadding="10" cellspacing="0" >
+      <caption>
+        <h2>Update User Data</h2>
+      </caption>
+      <!-- <tr>
+        <th>UserId : </th>
+        <td><input type="number" name="userId"></td>
+      </tr> -->
+      <tr>
+        <th>Name : </th>
+        <td><input type="text" name="name" value="<%= user.name %>"></td>
+      </tr>
+      <tr>
+        <th>Email : </th>
+        <td><input type="email" name="email" value="<%= user.email %>"></td>
+      </tr>
+      <tr>
+        <th>Password : </th>
+        <td><input type="password" name="password" value="<%= user.password %>"></td>
+      </tr>
+      <tr>
+        <th>Gender : </th>
+        <td>
+          
+<input type="radio" name="gender" value="Male" <%= user.gender === "Male" ? "checked" : "" %>>Male
+<input type="radio" name="gender" value="Female" <%= user.gender === "Female" ? "checked" : "" %>>Female
+<input type="radio" name="gender" value="Others" <%= user.gender === "Others" ? "checked" : "" %>>Others
+
+        </td>
+      </tr>
+      <tr>
+        <th>Hobbies : </th>
+        <td>
+          <input type="checkbox" name="hobby[]" value="dancing"
+  <%= user.hobby.includes("dancing") ? "checked" : "" %>>Dancing
+
+<input type="checkbox" name="hobby[]" value="singing"
+  <%= user.hobby.includes("singing") ? "checked" : "" %>>Singing
+
+<input type="checkbox" name="hobby[]" value="reading"
+  <%= user.hobby.includes("reading") ? "checked" : "" %>>Reading
+
+        </td>
+      </tr>
+      <tr>
+        <th>Mobile : </th>
+        <td><input type="number" name="mobile" value="<%= user.mobile%>"></td>
+      </tr>
+      <tr>
+        <th>City : </th>
+        <td>
+          <select id="" name="city">
+            <option value="">Choose a City</option>
+            <% 
+              let city=["Surat","Vadodara","Bharuch","Vapi"] 
+              city.map((val)=>{
+            %>
+              <option value="<%= val%>" <% if(user.city == val) { %> selected <% } %>>
+                <%= val%>
+              </option>
+            <%
+              })
+            %>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2" align="center"><input type="submit" name="submit" value="Update"></td>
+      </tr>
+    </table>
+  </form>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Max & Min Number</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="card">
+      <h2 >Maximum & Minimum Number</h2>
+
+      <p class="max-text">
+        Maximum Number:
+        <span id="max" ></span>
+      </p>
+
+      <p class="min-text" >
+        Minimum Number:
+        <span id="min" ></span>
+      </p>
+    </div>
+
+    <script>
+      let numbers = (prompt("Enter Numbers:")).split(",").map(Number)
+
+      const maxmin = (numbers) => {
+        let max = numbers[0];
+        let min = numbers[0];
+
+        for (let i = 1; i < numbers.length; i++) {
+          if (numbers[i] > max) max = numbers[i];
+          if (numbers[i] < min) min = numbers[i];
+        }
+
+        return { max, min };
+      };
+
+      const result = maxmin(numbers);
+
+      document.getElementById("max").innerText = result.max;
+      document.getElementById("min").innerText = result.min;
+    </script>
+  </body>
+</html>
