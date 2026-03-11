@@ -139,9 +139,7 @@ const Services = () => {
               />
             </motion.div>
 
-            <h3 className="text-lg font-semibold text-gray-800">
-              Mike Johnson
-            </h3>
+            <h3 className="text-lg font-semibold text-gray-800">John Doe</h3>
 
             <p className="text-sm text-gray-600 mt-2">Backend Developer</p>
 
@@ -165,9 +163,7 @@ const Services = () => {
               />
             </motion.div>
 
-            <h3 className="text-lg font-semibold text-gray-800">
-              Mike Johnson
-            </h3>
+            <h3 className="text-lg font-semibold text-gray-800">Alice John</h3>
 
             <p className="text-sm text-gray-600 mt-2">Backend Developer</p>
 
