@@ -1,9 +1,16 @@
 "use client";
-
 import Image from "next/image";
 import { motion } from "framer-motion";
 import style from "./service.module.css";
 import rose from "@/public/u1.jpg";
+
+// export const metadata = {
+//   title: "Services",
+//   description: "This is services page",
+//   author: [{ name: "Rose", email: "rose@example.com" }],
+//   keywords: ["nextjs", "services", "team", "animation"],
+// };
+
 //for animation
 const cardVariant = {
   hidden: { opacity: 0, y: 50 },
@@ -16,11 +23,11 @@ const Services = () => {
       <h1 className={style.common_heading}>Hello Services</h1>
 
       <div className="max-w-6xl mx-auto px-6">
-        <h2 className="text-3xl font-bold text-center mb-12 text-gray-800">
+        <h2 className="text-3xl font-bold text-center mb-12 text-light-800">
           Our Team
         </h2>
         {/* grid layout for card */}
-        <div className="grid md:grid-cols-3 sm:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
           {/* Card 1 */}
           <motion.div
             variants={cardVariant}
@@ -32,7 +39,7 @@ const Services = () => {
             <motion.div
               whileHover={{ rotate: 360 }}
               transition={{ duration: 0.5 }}
-              className="w-24 h-24 mx-auto mb-4 relative"
+              className="relative w-24 h-24 mx-auto mb-4 "
             >
               <Image
                 src={rose}
