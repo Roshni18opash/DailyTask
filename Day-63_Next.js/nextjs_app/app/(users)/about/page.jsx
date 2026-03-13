@@ -1,8 +1,8 @@
 const About = async () => {
   return (
-    <div>
-      <h2>welcome to the about page</h2>
-    </div>
+    <>
+      <h2>welcome to the about page from (user)</h2>
+    </>
   );
 };
 

@@ -1,5 +1,4 @@
 websocket
-
 Browser: Any new message?
 Server: No
 
@@ -31,9 +30,6 @@ ws:// → normal WebSocket (like HTTP)
 wss:// → secure WebSocket (like HTTPS)
 The server sends a message to multiple connected clients.=broadcast
 Client connects → socket connection
-
 Client sends message → socket.emit()
-
 Server receives message → socket.on()
-
 Server sends to others → broadcast
