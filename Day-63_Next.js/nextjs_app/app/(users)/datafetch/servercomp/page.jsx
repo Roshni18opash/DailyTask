@@ -14,11 +14,11 @@ const DataFetchServer = async (props) => {
   const searchParams = await props.searchParams;
   const username = searchParams.name;
 
-await new Promise((resolve)=>{
-  setTimeout(()=>{
-    resolve();
-  },3000)
-})
+  await new Promise((resolve) => {
+    setTimeout(() => {
+      resolve();
+    }, 3000);
+  });
   if (!username) {
     return (
       <div className="text-center mt-20">
@@ -45,6 +45,13 @@ await new Promise((resolve)=>{
   const percentage = userData.probability * 100;
   return (
     <div className="text-center mt-20">
+      <div className="h-full flex justify-center items-center">
+        <h2>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero sequi
+          ex at quae itaque quod numquam vitae autem perferendis ea esse
+          alias,voluptatibus unde in atque minima. Maxime, expedita sunt.
+        </h2>
+      </div>
       <h1 className="text-3xl font-bold">{userData.name}</h1>
       <p className="text-xl mt-4">Gender: {userData.gender}</p>
       <p className="text-xl mt-4">Probability: {percentage.toFixed(1)}%</p>
