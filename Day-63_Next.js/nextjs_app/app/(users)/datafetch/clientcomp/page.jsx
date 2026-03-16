@@ -22,7 +22,7 @@ const GenderClientPage = () => {
       return;
     }
 
-    const res = await fetch(`https://api.genderize.io/?name=${name}`);
+    // const res = await fetch(`https://api.genderize.io/?name=${name}`);
     const data = await res.json();
 
     if (!data.gender) {
