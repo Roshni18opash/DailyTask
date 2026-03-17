@@ -39,18 +39,18 @@ const DataFetchServer = async (props) => {
     );
   }
 
-  //const res = await fetch(`https://api.genderize.io/?name=${username}`);
+  const res = await fetch(`https://api.genderize.io/?name=${username}`);
   const userData = await res.json();
   console.log(userData);
   const percentage = userData.probability * 100;
   return (
     <div className="text-center mt-20">
       <div className="h-full flex justify-center items-center">
-        <h2>
+        {/* <h2>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero sequi
           ex at quae itaque quod numquam vitae autem perferendis ea esse
           alias,voluptatibus unde in atque minima. Maxime, expedita sunt.
-        </h2>
+        </h2> */}
       </div>
       <h1 className="text-3xl font-bold">{userData.name}</h1>
       <p className="text-xl mt-4">Gender: {userData.gender}</p>

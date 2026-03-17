@@ -22,7 +22,7 @@ const GenderClientPage = () => {
       return;
     }
 
-    // const res = await fetch(`https://api.genderize.io/?name=${name}`);
+    const res = await fetch(`https://api.genderize.io/?name=${name}`);
     const data = await res.json();
 
     if (!data.gender) {
@@ -74,7 +74,7 @@ const GenderClientPage = () => {
               <p>
                 <span className="font-semibold text-gray-400">
                   Probability:
-                </span>{" "}
+                </span>
                 <span className="text-yellow-400">
                   {(probability * 100).toFixed(1)}%
                 </span>

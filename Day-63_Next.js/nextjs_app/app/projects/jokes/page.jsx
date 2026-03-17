@@ -9,9 +9,10 @@ const JokeGenerator = () => {
 
   const fetchJoke = async () => {
     setLoading(true);
-    const res =
-      await fetch();
-      // "https://official-joke-api.appspot.com/random_joke",
+    const res = await fetch(
+      "https://official-joke-api.appspot.com/random_joke",
+    );
+
     const data = await res.json();
     setRandomJoke(data);
     setShowJoke(false);
@@ -48,7 +49,7 @@ const JokeGenerator = () => {
                 onClick={() => setShowJoke(true)}
                 className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-2 rounded-lg font-semibold shadow-md transition duration-200"
               >
-                Reveal Punchline
+                view Answer
               </button>
             ) : (
               <button
