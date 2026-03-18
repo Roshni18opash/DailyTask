@@ -25,7 +25,6 @@ export default function Home() {
     const res = await fetch(
       "https://www.themealdb.com/api/json/v1/1/random.php",
     );
-    n;
 
     const data = await res.json();
     setRecipes(data.meals || []);
