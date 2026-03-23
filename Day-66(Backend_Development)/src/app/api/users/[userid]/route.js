@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import { connectDB } from "../../../lib/db";
-import User from "../../../lib/models/User";
-
+import User from "../../../lib/models/Article";
+import Article from "../../../lib/models/Article";
 // GET ONE
 export async function GET(req, context) {
   await connectDB();

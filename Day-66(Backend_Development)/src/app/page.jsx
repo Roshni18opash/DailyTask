@@ -1,163 +1,84 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import Link from "next/link";
+import { useState } from "react";
 
-export default function HomePage() {
-  const [articles, setArticles] = useState([]);
-  const [form, setForm] = useState({
-    title: "",
-    description: "",
-  });
-  const [editingId, setEditingId] = useState(null);
-  //fetch api data
-  const fetchArticles = async () => {
-    const res = await fetch("/api/users");
-    const data = await res.json();
-    setArticles(data);
-  };
-  useEffect(() => {
-    const init = async () => {
-      await fetchArticles();
-    };
-    init();
-  }, []);
-  // CREATE
-  const handleSubmit = async (e) => {
+export default function LoginPage() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleLogin = async (e) => {
     e.preventDefault();
 
-    await fetch(`/api/users`, {
+    const res = await fetch("/api/auth/login", {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(form),
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email, password }),
     });
 
-    setForm({ title: "", description: "" });
-    fetchArticles();
-  };
+    const data = await res.json();
 
-  //  DELETE
-  const handleDelete = async (id) => {
-    await fetch(`/api/users/${id}`, {
-      method: "DELETE",
-    });
-
-    fetchArticles();
-  };
-  // UPDATE
-  const handleUpdate = async (id) => {
-    if (!form.title || !form.description) return;
-
-    await fetch(`/api/users/${id}`, {
-      method: "PUT",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(form),
-    });
-
-    setForm({ title: "", description: "" });
-    setEditingId(null);
-    fetchArticles();
+    if (res.ok) {
+      alert(data.message);
+      window.location.href = "/home";
+    } else {
+      alert(data.message);
+    }
   };
   return (
-    <div className="min-h-screen flex flex-col">
-      <header className="bg-gradient-to-r from-purple-500 to-indigo-600 text-white py-20 px-6 text-center">
-        <h1 className="text-4xl md:text-5xl font-bold mb-4">
-          Welcome to Tech World 🚀
-        </h1>
-        <p className="text-lg md:text-xl mb-6">
-          Your daily dose of tech news, tutorials, and insights.
-        </p>
-
-        <Link
-          href="/signup"
-          className="bg-white text-purple-600 font-semibold px-6 py-3 rounded-md hover:bg-gray-100 transition"
-        >
-          Get Started
-        </Link>
-      </header>
-      <main className="flex-1 bg-gray-100 py-12 px-6">
-        <div className="max-w-xl mx-auto mb-10 bg-white p-6 rounded shadow">
-          <h2 className="text-xl font-bold text-purple-700 mb-3">
-            {editingId ? "Edit Article" : "Add New Article"}
-          </h2>
-          <form
-            onSubmit={(e) => {
-              e.preventDefault();
-              if (editingId) {
-                handleUpdate(editingId);
-              } else {
-                handleSubmit(e);
-              }
-            }}
-            className="flex flex-col gap-3"
-          >
-            <input
-              placeholder="Title"
-              className="border p-2 rounded text-black"
-              value={form.title}
-              onChange={(e) => setForm({ ...form, title: e.target.value })}
-              required
-            />
-
-            <input
-              placeholder="Description"
-              className="border p-2 rounded text-black"
-              value={form.description}
-              onChange={(e) =>
-                setForm({ ...form, description: e.target.value })
-              }
-              required
-            />
-
-            <button className="bg-purple-600 text-white py-2 rounded hover:bg-purple-700">
-              {editingId ? "Update Article" : "Add Article"}
-            </button>
-          </form>
-        </div>
-        <h2 className="text-3xl font-bold mb-8 text-center text-gray-800">
-          Latest Articles
+    <div className="min-h-screen flex items-center justify-center bg-gray-100">
+      <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
+        <h2 className="text-2xl text-black font-bold mb-6 text-center">
+          Login
         </h2>
-
-        <div className="grid md:grid-cols-3 gap-6">
-          {articles.map((article) => (
-            <div
-              key={article._id || article.id}
-              className="bg-white rounded-lg shadow-md p-6 hover:shadow-xl transition"
+        <form onSubmit={handleLogin} className="space-y-4 text-black">
+          <div>
+            <label
+              htmlFor="email"
+              className="block text-sm font-medium text-gray-700"
             >
-              <h3 className="text-xl font-semibold mb-2 text-purple-700">
-                {article.title}
-              </h3>
-
-              <p className="text-gray-600 mb-4">{article.description}</p>
-
-              <div className="flex gap-2">
-                <button
-                  onClick={() => {
-                    setForm({
-                      title: article.title,
-                      description: article.description,
-                    });
-                    setEditingId(article._id || article.id);
-                  }}
-                  className="bg-blue-500 text-white px-3 py-1 rounded text-sm hover:bg-blue-600"
-                >
-                  Edit
-                </button>
-                <button
-                  onClick={() => handleDelete(article._id || article.id)}
-                  className="bg-red-500 text-white px-3 py-1 rounded text-sm hover:bg-red-600"
-                >
-                  Delete
-                </button>
-              </div>
-            </div>
-          ))}
-        </div>
-      </main>
+              Email
+            </label>
+            <input
+              type="email"
+              id="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="you@example.com"
+              className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+              required
+            />
+          </div>
+          <div>
+            <label
+              htmlFor="password"
+              className="block text-sm font-medium text-gray-700"
+            >
+              Password
+            </label>
+            <input
+              type="password"
+              id="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              placeholder="********"
+              className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 text-black focus:ring-blue-500 focus:border-blue-500"
+              required
+            />
+          </div>
+          <button
+            type="submit"
+            className="w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 transition-colors font-semibold"
+          >
+            Login
+          </button>
+        </form>
+        <p className="text-sm text-center text-gray-500 mt-4">
+          Dont have an account?
+          <a href="/register" className="text-blue-600 hover:underline">
+            Sign up
+          </a>
+        </p>
+      </div>
     </div>
   );
 }

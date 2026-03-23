@@ -1,4 +1,4 @@
-"use client"; // if using Next.js 13+ with app directory
+"use client";
 
 import { useState } from "react";
 
@@ -6,19 +6,31 @@ export default function LoginPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleLogin = (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
-    console.log("Email:", email, "Password:", password);
-    // Add your login logic here
-  };
 
+    const res = await fetch("/api/auth/login", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email, password }),
+    });
+
+    const data = await res.json();
+
+    if (res.ok) {
+      alert(data.message);
+      window.location.href = "/";
+    } else {
+      alert(data.message);
+    }
+  };
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100">
       <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
         <h2 className="text-2xl text-black font-bold mb-6 text-center">
           Login
         </h2>
-        <form onSubmit={handleLogin} className="space-y-4">
+        <form onSubmit={handleLogin} className="space-y-4 text-black">
           <div>
             <label
               htmlFor="email"
