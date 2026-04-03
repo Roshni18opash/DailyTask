@@ -1,0 +1,40 @@
+/* Completed Task */
+.completed {
+  text-decoration: line-through;
+  color: #9ca3af;
+  cursor: pointer;
+}
+
+/* Button Group */
+.btn-group {
+  display: flex;
+  gap: 6px;
+}
+
+/* Edit Button */
+.edit-btn {
+  background: #f59e0b;
+  color: white;
+  border: none;
+  padding: 5px 8px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.edit-btn:hover {
+  background: #d97706;
+}
+
+/* Save Button */
+.save-btn {
+  background: #10b981;
+  color: white;
+  border: none;
+  padding: 5px 8px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.save-btn:hover {
+  background: #059669;
+}

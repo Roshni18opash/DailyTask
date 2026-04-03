@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Product - Matrix Next</title>
+  <link rel="stylesheet" href="/css/modern.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body style="display: block; background: #0b0f1a; min-height: 100vh;">
+  
+  <%- include("./partials/header.ejs") %>
+  
+  <%- include("./partials/aside.ejs") %>
+
+  <main class="dashboard-content" style="margin-left: 260px; margin-top: 70px; padding: 3rem;">
+    <div class="content-header">
+      <div class="welcome-section">
+        <h1>Add New Product</h1>
+        <p class="subtitle text-start" style="text-align: left;">Create a new item in your inventory.</p>
+      </div>
+    </div>
+
+    <div class="auth-card" style="width: 100%; max-width: 600px; margin: 0 auto; background: rgba(30, 41, 59, 0.5);">
+      <form action="/product/addproduct" method="POST">
+        <div class="form-group">
+          <label>Product Title</label>
+          <div class="input-wrapper">
+            <input type="text" name="title" placeholder="e.g. Premium Laptop Case" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Image URL</label>
+          <div class="input-wrapper">
+            <input type="text" name="image" placeholder="https://unsplash.com/your-image.jpg" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Description</label>
+          <div class="input-wrapper">
+            <input type="text" name="dsc" placeholder="Briefly describe the product" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Rating (1-5)</label>
+          <div class="input-wrapper">
+            <input type="number" name="rate" min="1" max="5" placeholder="e.g. 5" required>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary" style="margin-top: 2rem;">
+          <i class="fas fa-plus"></i> Save Product
+        </button>
+      </form>
+    </div>
+  </main>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    $(".preloader").fadeOut();
+  </script>
+</body>
+
+</html>

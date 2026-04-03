@@ -1,0 +1,46 @@
+				What is Loose JS?
+Loose JavaScript:
+No types
+No null checks
+Can cause runtime errors
+Works but not safe
+				EXAMPLE:
+const input = document.getElementById("name");
+input.value = "Roshni";
+❌ JS allows this
+❌ But can crash if element is missing
+				What is Strict TypeScript?
+Explicit types
+Null safety
+Compile-time error checking
+Stable UI
+				Loos Js
+const input = document.getElementById("name");
+const value = input.value;
+function showError(msg) {
+  alert(msg);
+}
+const age = ageInput.value;
+
+
+
+				Strict TS
+const input = document.getElementById("name")! as HTMLInputElement;
+const value: string = input.value.trim();
+function showError(msg: string): void {
+  alert(msg);
+}
+const age: number = Number(ageInput.value);
+
+| Loose JS       | Strict TS           |
+| -------------- | ------------------- |
+| No types       | Explicit types      |
+| Unsafe DOM     | Non-null assertion  |
+| No validation  | Strong validation   |
+| Runtime errors | Compile-time safety |
+
+
+
+
+
+

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sum of Array</title>
+  </head>
+  <body
+    style="
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #ffffff;
+    "
+  >
+    <div
+      id="card"
+      style="
+        width: 50%;
+        height: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+      "
+    >
+      <p
+        id="sum"
+        style="
+          font-size: larger;
+          background-color: rgb(255, 255, 255);
+          color: rgb(0, 0, 0);
+          padding: 20px;
+          border-radius: 8px;
+          height: 30%;
+        "
+      ></p>
+    </div>
+    <script>
+      const arr = [11, 22, 33, 44];
+      let sum = 0;
+      for (let i = 0; i < arr.length; i++) {
+        sum += arr[i];
+      }
+      document.getElementById(
+        "sum"
+      ).innerHTML = `Sum of arr [${arr}] is : <span style="font-weight:bolder;font-size:larger;color:green"> ${sum} </span>`;
+    </script>
+  </body>
+</html>

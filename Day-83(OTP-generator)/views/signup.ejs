@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Account - Premium Auth</title>
+  <link rel="stylesheet" href="/css/modern.css">
+</head>
+
+<body>
+  <div class="auth-container">
+    <div class="auth-card">
+      <h1>Join us today</h1>
+      <p class="subtitle">Create a new account to get started</p>
+
+      <form action="/signup" method="POST">
+        <div class="form-group">
+          <label>Username</label>
+          <div class="input-wrapper">
+            <input type="text" name="username" placeholder="Choose a unique username" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Email Address</label>
+          <div class="input-wrapper">
+            <input type="email" name="email" placeholder="hello@company.com" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Password</label>
+          <div class="input-wrapper">
+            <input type="password" name="password" placeholder="At least 8 characters" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Contact Number</label>
+          <div class="input-wrapper">
+            <input type="tel" name="phone" placeholder="+1 (555) 000-0000" required>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Create Account</button>
+
+        <div class="divider">already have an account?</div>
+
+        <div class="footer-links">
+          <a href="/login" class="link">Go to Login</a>
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
+
+</html>

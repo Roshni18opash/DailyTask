@@ -1,0 +1,14 @@
+				Why React with TypeScript (Learning)
+❓ Why not only React (JavaScript)?
+JavaScript:
+
+No type checking
+Runtime errors
+Hard to manage in big projects
+
+				✅ React + TypeScript advantages
+Compile-time error checking
+Safer components
+Better autocomplete
+Easy to maintain large apps
+

@@ -1,0 +1,102 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 40px;
+  background-color: #f4f6f9;
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  gap: 10px;
+}
+
+input, select {
+  padding: 8px;
+}
+
+button {
+  padding: 8px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  background: white;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 10px;
+}
+
+a {
+  text-decoration: none;
+  color: blue;
+}
+.btn {
+  padding: 8px 12px;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  display: inline-block;
+}
+
+.btn:hover {
+  background-color: #0056b3;
+}
+table {
+  margin-top: 20px;
+}
+
+th {
+  background-color: #007bff;
+  color: white;
+}
+.btn-small {
+  padding: 5px 10px;
+  border-radius: 4px;
+  text-decoration: none;
+  color: white;
+  font-size: 14px;
+  margin-right: 8px;   
+}
+
+.edit {
+  background-color: #28a745;
+}
+
+.delete {
+  background-color: #dc3545;
+}
+
+.edit:hover {
+  background-color: #218838;
+}
+
+.delete:hover {
+  background-color: #c82333;
+}
+.action-buttons {
+  display: flex;
+  gap: 8px;   
+}
+.updt{
+  width: 30%;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  background-color: #218838;
+}

@@ -1,0 +1,193 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    background-color: #ffffff;
+    padding: 40px 60px;
+    color: #111;
+}
+
+h1 {
+    text-align: center;
+    font-size: 42px;
+    letter-spacing: 4px;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+
+.btn {
+    display: block;
+    width: fit-content;
+    margin: 0 auto 60px;
+    padding: 10px 28px;
+    border: 1px solid black;
+    text-decoration: none;
+    color: black;
+    font-size: 13px;
+    letter-spacing: 1px;
+    transition: 0.3s ease;
+}
+
+.btn:hover {
+    background: black;
+    color: white;
+}
+
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 60px;
+}
+
+.card {
+    position: relative;
+    text-align: center;
+    overflow: hidden;
+}
+
+.card img {
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+    transition: 0.4s ease;
+}
+
+.card:hover img {
+    transform: scale(1.05);
+    opacity: 0.9;
+}
+
+.card h3 {
+    margin-top: 18px;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+.card p {
+    font-size: 13px;
+    color: #777;
+    margin-top: 6px;
+}
+
+.buttons {
+    position: absolute;
+    bottom: 120px;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.4s ease;
+}
+
+.card:hover .buttons {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.buttons form {
+    margin: 0;
+}
+
+.buttons form button,
+.buttons a {
+    background: white;
+    border: 1px solid black;
+    padding: 8px 20px;
+    font-size: 12px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+    transition: all 0.3s ease;
+}
+
+.buttons form button {
+    outline: none;
+    box-shadow: none;
+}
+
+.buttons form button:hover,
+.buttons a:hover {
+    background: black;
+    color: white;
+}
+
+form {
+    max-width: 500px;
+    margin: 60px auto;
+    display: flex;
+    flex-direction: column;
+}
+
+form input[type="text"],
+form textarea,
+form input[type="file"] {
+    margin-bottom: 20px;
+    padding: 12px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+form textarea {
+    resize: none;
+    height: 120px;
+}
+
+form button {
+    padding: 12px;
+    border: 1px solid black;
+    background: white;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+form button:hover {
+    background: black;
+    color: white;
+}
+.back-button {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    text-decoration: none;
+    color: black;
+    font-size: 14px;
+}
+
+@media (max-width: 900px) {
+    body {
+        padding: 30px;
+    }
+
+    .card img {
+        height: 350px;
+    }
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 20px;
+    }
+
+    .gallery {
+        gap: 40px;
+    }
+
+    .card img {
+        height: 280px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+}

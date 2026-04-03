@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - Premium Auth</title>
+  <link rel="stylesheet" href="/css/modern.css">
+</head>
+
+<body>
+  <div class="auth-container">
+    <div class="auth-card" id="loginCard">
+      <h1>Welcome back</h1>
+      <p class="subtitle">Log in to your account to continue</p>
+
+      <form action="/local" method="POST">
+        <div class="form-group">
+          <label>Username</label>
+          <div class="input-wrapper">
+            <input type="text" name="username" placeholder="Enter your username" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Password</label>
+          <div class="input-wrapper">
+            <input type="password" name="password" placeholder="••••••••" required>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Sign In</button>
+
+        <div class="footer-links">
+          <a href="javascript:void(0)" class="link" id="forgotBtn">Forgot Password?</a>
+        </div>
+
+        <div class="divider">or</div>
+
+        <div class="footer-links">
+          Don't have an account? <a href="/signup" class="link">Create Account</a>
+        </div>
+      </form>
+    </div>
+
+    <!-- Recovery Form (Hidden Initially) -->
+    <div class="auth-card hidden" id="recoverCard">
+      <h1>Recover account</h1>
+      <p class="subtitle">Enter your email and we'll send a code</p>
+
+      <form action="/forget" method="POST">
+        <div class="form-group">
+          <label>Email Address</label>
+          <div class="input-wrapper">
+            <input type="email" name="email" placeholder="example@gmail.com" required>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Send Recovery Code</button>
+
+        <button type="button" class="btn btn-secondary" id="backToLoginBtn">Back to Login</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    $('#forgotBtn').click(function() {
+      $('#loginCard').addClass('hidden');
+      $('#recoverCard').removeClass('hidden').addClass('fade-in');
+    });
+
+    $('#backToLoginBtn').click(function() {
+      $('#recoverCard').addClass('hidden');
+      $('#loginCard').removeClass('hidden').addClass('fade-in');
+    });
+  </script>
+</body>
+
+</html>

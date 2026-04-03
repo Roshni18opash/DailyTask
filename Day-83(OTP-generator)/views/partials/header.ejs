@@ -1,0 +1,78 @@
+<header class="main-header">
+  <div class="logo">
+    <span class="logo-accent ">Matrix</span> 
+  </div>
+  <div class="nav-actions">
+    <div class="user-profile">
+      <span>Welcome, <strong><%= locals.user ? user.username : 'Guest' %></strong></span>
+      <div class="avatar"><%= locals.user ? user.username.charAt(0).toUpperCase() : 'G' %></div>
+    </div>
+    <a href="/logout" class="btn-logout">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4M16 17l5-5-5-5M21 12H9"/></svg>
+    </a>
+  </div>
+</header>
+
+<style>
+.main-header {
+  height: 70px;
+  background: rgba(15, 23, 42, 0.8);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.logo-accent {
+  color: #6366f1;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.user-profile {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-size: 0.9rem;
+}
+
+.avatar {
+  width: 38px;
+  height: 38px;
+  background: linear-gradient(135deg, #6366f1, #a855f7);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  color: #fff;
+  border: 2px solid rgba(255,255,255,0.1);
+}
+
+.btn-logout {
+  color: #94a3b8;
+  transition: color 0.3s;
+}
+
+.btn-logout:hover {
+  color: #ef4444;
+}
+</style>

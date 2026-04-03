@@ -1,0 +1,25 @@
+.profile-card {
+  border: 2px solid #6366f1;
+  padding: 16px;
+  margin: 12px;
+  border-radius: 8px;
+  background-color: #f9fafb;
+  width: 260px;
+}
+
+.profile-name {
+  color: #111827;
+  font-size: 18px;
+}
+
+.profile-age,
+.profile-status {
+  font-size: 15px;
+  color: #374151;
+}
+
+.profile-children {
+  margin-top: 8px;
+  color: #dc2626;
+  font-weight: bold;
+}

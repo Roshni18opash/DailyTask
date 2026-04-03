@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Blog Dashboard</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="nav-left">
+    <h2>Admin Panel</h2>
+  </div>
+
+  <div class="nav-right">
+    <% if (user) { %>
+          <span class="role-badge <%= user.role %>">
+        <%= user.role.toUpperCase() %>
+      </span>
+<span>Welcome, <strong><%= user.username %></strong></span>
+      <a href="/" class="nav-btn">Blogs</a>
+
+      <% if (user.role === "admin" || user.role === "manager") { %>
+        <a href="/form" class="nav-btn add-btn">Add Blog</a>
+      <% } %>
+
+      
+
+  
+
+      <a href="/logout" class="logout-btn nav-btn">Logout</a>
+
+    <% } else { %>
+      <a href="/login" class="logout-btn">Login</a>
+    <% } %>
+  </div>
+</nav>
+
+<div class="container">
+
+  <% if (data.length === 0) { %>
+    <h3 class="no-data">No Blogs Available</h3>
+  <% } %>
+
+  <div class="blog-grid">
+    <% data.forEach((val) => { %>
+
+      <div class="blog-card">
+        <h3><%= val.title %></h3>
+
+        <img src="<%= val.image %>" alt="<%= val.title %>">
+
+        <p><strong>Blogger:</strong> <%= val.bname %></p>
+        <p><strong>Category:</strong> <%= val.type %></p>
+        <p><strong>Date:</strong> <%= val.date %></p>
+        <p><strong>Description:</strong> <%= val.dsc %></p>
+
+        <div class="btn-group">
+
+          <% if (user && user.role === "admin") { %>
+            <a href="/deleteData/<%= val._id %>" class="btn delete">Delete</a>
+          <% } %>
+
+          <% if (user && (user.role === "admin" || user.role === "manager")) { %>
+            <a href="/editData?id=<%= val._id %>" class="btn edit">Edit</a>
+          <% } %>
+
+        </div>
+
+      </div>
+
+    <% }) %>
+  </div>
+
+</div>
+
+</body>
+</html>

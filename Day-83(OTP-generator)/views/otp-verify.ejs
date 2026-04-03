@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Verification Code - Premium Auth</title>
+  <link rel="stylesheet" href="/css/modern.css">
+</head>
+
+<body>
+  <div class="auth-container">
+    <div class="auth-card">
+      <h1>Check your email</h1>
+      <p class="subtitle">We've sent a 6-digit code to your inbox</p>
+
+      <form action="/verify" method="POST">
+        <div class="form-group">
+          <label>Verification Code</label>
+          <div class="input-wrapper">
+            <input type="text" name="otp" placeholder="Enter 6-digit code" maxlength="6" style="text-align: center; letter-spacing: 10px; font-size: 1.5rem;" required>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Verify Identity</button>
+
+        <div class="footer-links">
+          Didn't receive code? <a href="/login" class="link">Resend email</a>
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
+
+</html>

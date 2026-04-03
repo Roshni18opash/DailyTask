@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Image Gallery</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <h1>ZARA Gallery</h1>
+    <a href="/upload" class="btn">Add Image</a>
+    
+    <div class="gallery">
+        <% images.forEach(image => { %>
+    <div class="card">
+    <img src="<%= image.imageUrl %>" alt="<%= image.title %>">
+    <h3><%= image.title %></h3>
+    <p><%= image.description %></p>
+
+  
+    <!-- Delete button -->
+ <div class="buttons">
+    <form action="/image/<%= image._id %>?_method=DELETE" method="POST">
+        <button type="submit">DELETE</button>
+    </form>
+    <a href="/image/<%= image._id %>/edit">EDIT</a>
+</div>
+</div>
+        <% }) %>
+    </div>
+</body>
+</html>

@@ -1,0 +1,105 @@
+What are Functions?
+Functions are fundamental building blocks in all programming.
+Functions are reusable block of code designed to perform a particular task.
+Functions are executed when they are "called" or "invoked".
+
+Why Functions?
+Functions enable better code organization and efficiency.
+With functions you can reuse code.
+You can write code that can be used many times.
+You can use the same code with different arguments, to produce different results.
+
+Arrow Functions
+Arrow functions were introduced in ES6.
+Arrow Functions allow a shorter syntax for function expressions.let myFunction = (a, b) => a * b;
+
+Local Variables
+Variables declared within a JavaScript function, become LOCAL to the function.
+Local variables can only be accessed from within the function.
+Since local variables are only recognized inside their functions, variables with the same name can be used in different functions.
+Local variables are created when a function starts, and deleted when the function is completed.
+
+Parameters vs. Arguments
+In JavaScript, function parameters and arguments are distinct concepts:
+Parameters are the names listed in the function definition.
+Arguments are the values received by the function.
+Examples
+"name" and "age" are parameters:
+function greet(name, age) {
+  return `Hello ${name}! You are ${age} years old.`;
+}
+"John" and 21 are arguments:
+greet("John", 21);
+
+What is a Function Expression?
+A function expression is a function assigned to a variable.
+A function expression is a way of defining a function within an expression, rather than as a standalone declaration.
+A function expression can be assigned to a variable, passed as an argument to another function, or returned from a function.
+
+
+What is Array?
+An Array is an object type designed for storing data collections.
+Key characteristics of JavaScript arrays are:
+Elements: An array is a list of values, known as elements.
+Ordered: Array elements are ordered based on their index.
+Zero indexed: The first element is at index 0, the second at index 1, and so on.
+Dynamic size: Arrays can grow or shrink as elements are added or removed.
+Heterogeneous: Arrays can store elements of different data types (numbers, strings, objects and other arrays).
+
+Name	Description
+[ ]	Creates a new Array
+new Array()	Creates a new Array
+at()	Returns an indexed element of an array
+concat()	Joins arrays and returns an array with the joined arrays
+constructor	Returns the function that created the Array prototype
+copyWithin()	Copies array elements within the array, to and from specified positions
+entries()	Returns a key/value pair Array Iteration Object
+every()	Checks if every element in an array pass a test
+fill()	Fill the elements in an array with a static value
+filter()	Creates a new array with every element in an array that pass a test
+find()	Returns the value of the first element in an array that pass a test
+findIndex()	Returns the index of the first element in an array that pass a test
+findLast()	Returns the value of the last element in an array that pass a test
+findLastIndex()	Returns the index of the last element in an array that pass a test
+flat()	Concatenates sub-array elements
+flatMap()	Maps all array elements and creates a new flat array
+forEach()	Calls a function for each array element
+from()	Creates an array from an object
+includes()	Check if an array contains the specified element
+indexOf()	Search the array for an element and returns its position
+isArray()	Checks whether an object is an array
+join()	Joins all elements of an array into a string
+keys()	Returns a Array Iteration Object, containing the keys of the original array
+lastIndexOf()	Search the array for an element, starting at the end, and returns its position
+length	Sets or returns the number of elements in an array
+map()	Creates a new array with the result of calling a function for each array element
+of()	Creates an array from a number of arguments
+pop()	Removes the last element of an array, and returns that element
+prototype	Allows you to add properties and methods to an Array object
+push()	Adds new elements to the end of an array, and returns the new length
+reduce()	Reduce the values of an array to a single value (going left-to-right)
+reduceRight()	Reduce the values of an array to a single value (going right-to-left)
+reverse()	Reverses the order of the elements in an array
+shift()	Removes the first element of an array, and returns that element
+slice()	Selects a part of an array, and returns the new array
+some()	Checks if any of the elements in an array pass a test
+sort()	Sorts the elements of an array
+splice()	Adds or Removes array elements
+toReversed()	Reverses the order of array elements (to a new array)
+toSorted()	Sorts the elements of an array (to a new array)
+toSpliced()	Adds or Removes array elements (to a new array)
+toString()	Converts an array to a string, and returns the result
+unshift()	Adds new elements to the beginning of an array, and returns the new length
+valueOf()	Returns the primitive value of an array
+with()	Returns a new array with updated elements
+
+Subject : Following are updates on {{your task}} as of {{Date}}
+ 
+Completed Task:
+        List of completed tasks
+ 
+In-progress Task:
+        List of in progress task
+ 
+Thanks,
+your name

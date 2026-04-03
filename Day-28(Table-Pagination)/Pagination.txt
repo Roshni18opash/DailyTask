@@ -1,0 +1,23 @@
+					React Pagination
+
+install "npm i react-paginate"
+"npm i react-bootstrap bootsrap axios
+import all
+css import in app
+make face api
+https://fake-store-api.mock.beeceptor.com/api/products
+
+Completed Task:
+solve contextApi error
+Learn about error boundaries
+Table Components
+logic of pagination using bootstrap
+Incompleted Task:
+To add pagination events  
+
+
+
+
+
+https://github.com/Roshni18opash/DailyTask/tree/main/Day-26(Context-API)/context_auth
+https://github.com/Roshni18opash/DailyTask/tree/main/Day-27(Table-Pagination)

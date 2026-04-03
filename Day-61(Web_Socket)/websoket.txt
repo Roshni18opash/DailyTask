@@ -1,0 +1,35 @@
+websocket
+Browser: Any new message?
+Server: No
+
+Browser: Any new message?
+Server: No
+
+Browser: Any new message?
+Server: Yes
+This is called polling and it wastes requests.
+
+WebSocket idea
+
+WebSocket keeps the connection open.
+
+Browser  <=======>  Server
+        (always connected)  now server can send data anytime
+Chat apps
+Live notifications
+Live sports score
+Online multiplayer games
+Stock price update
+
+HTTP = Phone call where you hang up after every sentence
+WebSocket = Phone call that stays connected
+
+WebSocket URL formats
+ws:// → normal WebSocket (like HTTP)
+
+wss:// → secure WebSocket (like HTTPS)
+The server sends a message to multiple connected clients.=broadcast
+Client connects → socket connection
+Client sends message → socket.emit()
+Server receives message → socket.on()
+Server sends to others → broadcast

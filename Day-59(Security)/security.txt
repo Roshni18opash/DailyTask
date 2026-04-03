@@ -1,0 +1,51 @@
+I used Zod validation to validate user inputs before processing requests.
+It ensures that invalid data like wrong email formats or short passwords never reach the database.
+
+Helmet adds secure HTTP headers to protect the backend from attacks like XSS, clickjacking, and MIME sniffing.
+Kaise test kare
+
+Ek hi API ko 5 baar call karo.
+
+6th request par response aayega:
+
+{
+ "message": "Too many requests"
+}
+
+My backend follows a layered security approach.
+I implemented authentication using JSON Web Token and password hashing using bcryptjs.
+For input validation I used Zod to prevent invalid or malicious data.
+I added Helmet to secure HTTP headers and express-rate-limit to prevent API abuse and brute force attacks.
+This combination helps create a hardened backend that protects APIs and user data.
+Client
+ ↓
+Rate Limit
+ ↓
+Helmet Security Headers
+ ↓
+Zod Validation
+ ↓
+JWT Authentication
+ ↓
+Controller
+ ↓
+Database
+
+
+
+JWT _ Agar koi user login nahi hai phir bhi API access kare.router.get("/profile",verifyToken)
+Token nahi → access denied.
+BCRYPT_Agar database hack ho jaye to password safe rehna chahiye.
+ZOD_Agar user galat ya malicious data bheje.Invalid data → request reject.
+HELMET_Browser Based Attacks
+XSS
+
+मैंने एक secure authentication backend बनाया है using Node.js, Express.js और MongoDB।
+इस backend में मैंने multiple security layers implement की हैं।
+User authentication के लिए मैंने JSON Web Token का use किया है और password security के लिए bcryptjs hashing implement की है ताकि password plain text में store ना हो।
+User input validation के लिए मैंने Zod use किया है जिससे invalid data database तक नहीं पहुंचता।
+Server security के लिए मैंने Helmet middleware use किया है जो secure HTTP headers add करता है।
+API abuse और brute-force attacks रोकने के लिए मैंने express-rate-limit implement किया है।
+इसके अलावा मैंने CORS configure किया है ताकि केवल authorized frontend ही backend APIs access कर सके।
+इस तरह मेरा backend multiple security layers के साथ hardened और secure बन जाता है।
+Clickjacking Helmet automatically secure headers add karta hai.

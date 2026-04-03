@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - Matrix Next</title>
+  <link rel="stylesheet" href="/css/modern.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body style="display: block; background: #0b0f1a; min-height: 100vh;">
+  
+  <%- include("./partials/header.ejs") %>
+  
+  <%- include("./partials/aside.ejs") %>
+
+  <main class="dashboard-content" style="margin-left: 260px; margin-top: 70px; padding: 3rem;">
+    <div class="content-header">
+      <div class="welcome-section">
+        <h1>Welcome, <%= locals.user ? user.username : 'User' %></h1>
+        <p class="subtitle text-start" style="text-align: left;">Comprehensive overview of your system.</p>
+      </div>
+      <div class="date-display">
+        <span id="current-date-2">Today, April 2, 2026</span>
+      </div>
+    </div>
+
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-icon purple">
+          <i class="fas fa-users"></i>
+        </div>
+        <div class="stat-info">
+          <h3>Total Members</h3>
+          <p>2,540</p>
+        </div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-icon blue">
+          <i class="fas fa-box-open"></i>
+        </div>
+        <div class="stat-info">
+          <h3>Active Products</h3>
+          <p>128 Items</p>
+        </div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-icon pink">
+          <i class="fas fa-chart-bar"></i>
+        </div>
+        <div class="stat-info">
+          <h3>Platform Health</h3>
+          <p>100% Online</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Quick navigation buttons matching the user's intent from the screenshot -->
+    <div class="main-sections">
+        <div class="section-card">
+            <h2>System Navigation</h2>
+            <div style="display: flex; gap: 1rem; margin-top: 1.5rem; flex-wrap: wrap;">
+                <a href="/index" style="background: var(--primary); text-decoration: none; padding: 2rem; border-radius: 20px; flex: 1; min-width: 150px; text-align: center; color: white;">
+                    <i class="fas fa-th-large" style="display: block; font-size: 2rem; margin-bottom: 1rem;"></i> Dashboard
+                </a>
+                <a href="/tables" style="background: #10b981; text-decoration: none; padding: 2rem; border-radius: 20px; flex: 1; min-width: 150px; text-align: center; color: white;">
+                    <i class="fas fa-table" style="display: block; font-size: 2rem; margin-bottom: 1rem;"></i> Members
+                </a>
+                <a href="/product" style="background: #f59e0b; text-decoration: none; padding: 2rem; border-radius: 20px; flex: 1; min-width: 150px; text-align: center; color: white;">
+                    <i class="fas fa-shopping-bag" style="display: block; font-size: 2rem; margin-bottom: 1rem;"></i> Products
+                </a>
+                <a href="/profile" style="background: #ef4444; text-decoration: none; padding: 2rem; border-radius: 20px; flex: 1; min-width: 150px; text-align: center; color: white;">
+                    <i class="fas fa-user-circle" style="display: block; font-size: 2rem; margin-bottom: 1rem;"></i> Profile
+                </a>
+            </div>
+        </div>
+    </div>
+  </main>
+
+  <script>
+    document.getElementById('current-date-2').innerText = new Date().toLocaleDateString('en-US', {
+      weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'
+    });
+  </script>
+</body>
+
+</html>

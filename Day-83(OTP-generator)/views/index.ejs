@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - Matrix Next</title>
+  <link rel="stylesheet" href="/css/modern.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body style="display: block; background: #0b0f1a; min-height: 100vh;">
+  
+  <%- include("./partials/header.ejs") %>
+  
+  <%- include("./partials/aside.ejs") %>
+
+  <main class="dashboard-content">
+    <div class="content-header">
+      <div class="welcome-section">
+        <h1>Welcome back, <%= user ? user.username : 'User' %></h1>
+        <p class="subtitle text-start" style="text-align: left;">Here's an overview of your dashboard today.</p>
+      </div>
+      <div class="date-display">
+        <span id="current-date">Today, April 2, 2026</span>
+      </div>
+    </div>
+
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-icon purple">
+          <i class="fas fa-users"></i>
+        </div>
+        <div class="stat-info">
+          <h3>Users</h3>
+          <p>2,540 Total</p>
+        </div>
+        <div class="stat-trend positive">+12%</div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-icon blue">
+          <i class="fas fa-shopping-cart"></i>
+        </div>
+        <div class="stat-info">
+          <h3>Orders</h3>
+          <p>9,540 Total</p>
+        </div>
+        <div class="stat-trend positive">+5.2%</div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-icon pink">
+          <i class="fas fa-chart-line"></i>
+        </div>
+        <div class="stat-info">
+          <h3>Growth</h3>
+          <p>87% Monthly</p>
+        </div>
+        <div class="stat-trend">+8%</div>
+      </div>
+    </div>
+
+    <div class="main-sections">
+      <div class="section-card">
+        <div class="section-title">
+          <h2>Recent Activity</h2>
+          <a href="#" class="view-all">View All</a>
+        </div>
+        <div class="activity-list">
+          <div class="activity-item">
+            <div class="dot green"></div>
+            <p>New user registered: <strong>John Doe</strong></p>
+            <span class="time">2 mins ago</span>
+          </div>
+          <div class="activity-item">
+            <div class="dot blue"></div>
+            <p>Order #3245 completed successfully</p>
+            <span class="time">15 mins ago</span>
+          </div>
+          <div class="activity-item">
+            <div class="dot orange"></div>
+            <p>Server status: <strong>Nominal</strong></p>
+            <span class="time">1 hour ago</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-card">
+        <div class="section-title">
+          <h2>Quick Actions</h2>
+        </div>
+        <div class="action-buttons">
+          <a href="/profile" class="btn btn-secondary"><i class="fas fa-user-edit"></i> Edit Profile</a>
+          <a href="/form-basic" class="btn btn-secondary"><i class="fas fa-plus"></i> Add Product</a>
+          <a href="/tables" class="btn btn-secondary"><i class="fas fa-table"></i> User List</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <style>
+    .dashboard-content {
+      margin-left: 260px;
+      margin-top: 70px;
+      padding: 3rem;
+    }
+
+    .content-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2.5rem;
+    }
+
+    .date-display {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 0.5rem 1rem;
+      border-radius: 10px;
+      color: #94a3b8;
+      font-size: 0.9rem;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 3rem;
+    }
+
+    .stat-card {
+      background: rgba(30, 41, 59, 0.7);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 1.8rem;
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      position: relative;
+    }
+
+    .stat-icon {
+      width: 54px;
+      height: 54px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+    }
+
+    .stat-icon.purple { background: rgba(168, 85, 247, 0.15); color: #a855f7; }
+    .stat-icon.blue { background: rgba(59, 130, 246, 0.15); color: #3b82f6; }
+    .stat-icon.pink { background: rgba(236, 72, 153, 0.15); color: #ec4899; }
+
+    .stat-info h3 { font-size: 0.9rem; color: #94a3b8; font-weight: 500; margin-bottom: 2px; }
+    .stat-info p { font-size: 1.3rem; font-weight: 700; color: #fff; }
+
+    .stat-trend {
+      position: absolute;
+      top: 1.8rem;
+      right: 1.8rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+
+    .stat-trend.positive { color: #10b981; }
+
+    .main-sections {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 2rem;
+    }
+
+    .section-card {
+      background: rgba(30, 41, 59, 0.5);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      padding: 2rem;
+      border-radius: 24px;
+    }
+
+    .section-title {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2rem;
+    }
+
+    .view-all { color: #6366f1; text-decoration: none; font-size: 0.9rem; font-weight: 600; }
+
+    .activity-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1rem 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .dot { width: 8px; height: 8px; border-radius: 50%; }
+    .dot.green { background: #10b981; }
+    .dot.blue { background: #3b82f6; }
+    .dot.orange { background: #f59e0b; }
+
+    .time { margin-left: auto; color: #64748b; font-size: 0.8rem; }
+
+    .action-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+  </style>
+  
+  <script>
+    document.getElementById('current-date').innerText = new Date().toLocaleDateString('en-US', {
+      weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'
+    });
+  </script>
+</body>
+
+</html>

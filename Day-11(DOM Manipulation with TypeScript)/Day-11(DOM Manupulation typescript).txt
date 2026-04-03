@@ -1,0 +1,17 @@
+
+DOM manpulation Typescript
+
+| HTML Tag    | TypeScript Type        |
+| ----------- | ---------------------- |
+| `<div>`     | `HTMLDivElement`       |
+| `<p>`       | `HTMLParagraphElement` |
+| `<h1>–<h6>` | `HTMLHeadingElement`   |
+| `<input>`   | `HTMLInputElement`     |
+| `<button>`  | `HTMLButtonElement`    |
+| `<form>`    | `HTMLFormElement`      |
+| `<img>`     | `HTMLImageElement`     |
+| `<a>`       | `HTMLAnchorElement`    |
+| `<span>`    | `HTMLSpanElement`      |
+| `<ul>`      | `HTMLUListElement`     |
+| `<li>`      | `HTMLLIElement`        |
+| Any element | `HTMLElement`          |

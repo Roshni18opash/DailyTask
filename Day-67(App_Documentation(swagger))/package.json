@@ -1,0 +1,32 @@
+{
+  "name": "swagger",
+  "version": "1.0.0",
+  "description": "job portal project with swagger",
+  "keywords": [
+    "Roshni",
+    "Prajapati"
+  ],
+  "license": "ISC",
+  "author": "Day 71 – Documentation",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "bcryptjs": "^3.0.3",
+    "jsonwebtoken": "^9.0.3",
+    "mongoose": "^9.3.1",
+    "next": "^16.2.1",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-react": "^5.32.1"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.27",
+    "postcss": "^8.5.8",
+    "tailwindcss": "^3.4.1"
+  }
+}
