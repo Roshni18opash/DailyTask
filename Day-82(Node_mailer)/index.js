@@ -1,19 +1,3 @@
-// const express = require("express");
-// const app = express();
-// const port = 3000;
-
-// app.use("/", require("./routers"));
-
-// app.listen(port, (err) => {
-//   if (!err) {
-//     console.log(`Server is running on http://localhost:${port}`);
-//   } else {
-//     console.error("Error starting server:", err);
-//   }
-// });
-// app.get("/", (req, res) => {
-//   res.send("Hello World!");
-// });
 const express = require("express");
 const nodemailer = require("nodemailer");
 const bodyParser = require("body-parser");
