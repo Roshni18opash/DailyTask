@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Neutrogena Hydro Boost Moisturizer",
+    "category": "Moisturizer",
+    "ideal_for": "dry skin",
+    "benefits": "deep hydration, soft and glowing skin"
+  },
+  {
+    "name": "Salicylic Acid Face Wash",
+    "category": "Cleanser",
+    "ideal_for": "oily acne",
+    "benefits": "reduces acne, controls oil"
+  },
+  {
+    "name": "Vitamin C Serum",
+    "category": "Serum",
+    "ideal_for": "dull skin pigmentation",
+    "benefits": "brightens skin, reduces dark spots"
+  }
+]
