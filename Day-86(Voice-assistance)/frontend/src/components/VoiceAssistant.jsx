@@ -22,7 +22,7 @@ export default function VoiceAssistant() {
 
   return (
     <div>
-      <button onClick={startCall}>🎤 Talk to Beauty Assistant</button>
+      <button onClick={startCall}> Talk to Beauty Assistant</button>
     </div>
   );
 }

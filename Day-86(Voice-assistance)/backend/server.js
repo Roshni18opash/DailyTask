@@ -24,7 +24,7 @@ app.post("/recommend", (req, res) => {
       p.ideal_for.toLowerCase().includes(concern.toLowerCase()),
   );
 
-  res.json(result.slice(0, 1)); // only 1 product (better for voice)
+  res.json(result.slice(0, 1));
 });
 
 app.get("/", (req, res) => {

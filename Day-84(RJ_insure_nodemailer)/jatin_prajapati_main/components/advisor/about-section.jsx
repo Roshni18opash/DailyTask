@@ -9,19 +9,19 @@ export function AboutSection() {
   const isInView = useInView(ref, { once: true, margin: "-100px" })
 
   return (
-    <section id="about" className="py-24 relative overflow-hidden" ref={ref}>
+    <section id="about" className="py-12 md:py-16 relative overflow-hidden" ref={ref}>
       <div className="absolute inset-0 bg-background/50 backdrop-blur-sm pointer-events-none" />
       <div className="absolute top-0 right-0 w-1/2 h-full bg-primary/5 blur-[120px] rounded-full pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 lg:gap-12 items-center">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8 }}
-            className="lg:col-span-2 relative group"
+            className="lg:col-span-2 relative group flex justify-center"
           >
-            <div className="aspect-[4/5] rounded-[3rem] overflow-hidden bg-gradient-to-br from-primary/20 via-primary/5 to-transparent border-2 border-primary/20 shadow-2xl relative shadow-primary/10 flex items-center justify-center">
+            <div className="w-full max-w-[280px] lg:max-w-md aspect-[4/5] rounded-[3rem] overflow-hidden bg-gradient-to-br from-primary/20 via-primary/5 to-transparent border-2 border-primary/20 shadow-2xl relative shadow-primary/10 flex items-center justify-center">
               {/* Professional Consultation Photo */}
               <img
                 src="/jatinprajapati.jpeg"

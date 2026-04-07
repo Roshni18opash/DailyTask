@@ -12,7 +12,7 @@ const stats = [
 
 export function HeroSection() {
   return (
-    <section className="relative pt-32 pb-20 overflow-hidden bg-background">
+    <section className="relative pt-24 pb-12 overflow-hidden bg-background">
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div
           animate={{
@@ -44,7 +44,7 @@ export function HeroSection() {
             transition={{ duration: 0.8, type: "spring" }}
             className="relative"
           >
-            <div className="relative z-10 w-64 h-64 sm:w-80 sm:h-80 rounded-[2.5rem] bg-gradient-to-br from-primary via-primary/50 to-background p-[2px] shadow-2xl shadow-primary/20">
+            <div className="relative z-10 w-48 h-48 sm:w-64 sm:h-64 rounded-[2.5rem] bg-gradient-to-br from-primary via-primary/50 to-background p-[2px] shadow-2xl shadow-primary/20">
               <div className="w-full h-full rounded-[2.4rem] bg-card flex items-center justify-center overflow-hidden relative">
                 <img
                   src="/advisor-portrait.png"
