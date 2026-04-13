@@ -122,17 +122,11 @@ const changePasswordPage = async (req, res) => {
   }
 };
 
-// forgetpassword reset through otp
-
-// forgetpassword reset through otp
-
 const forgetPassword = async (req, res) => {
   try {
-    // ૧. યુઝર જે ઈમેઈલ એન્ટર કરે તે અહીં રિક્વેસ્ટમાંથી મળે છે
     const { email } = req.body;
     console.log("Password reset requested for:", email);
 
-    // ૨. ડેટાબેઝમાં ચેક કરે છે કે આ ઈમેઈલ વાળો કોઈ યુઝર છે કે નહીં
     let user = await passportSch.findOne({ email: email });
 
     if (!user) {
@@ -141,25 +135,21 @@ const forgetPassword = async (req, res) => {
       return res.redirect("/login");
     }
 
-    // ૩. પાસવર્ડ બદલવા માટે ૬-આંકડાનો યુનિક OTP (રેન્ડમ નંબર) જનરેટ કરે છે
     let otp = Math.floor(100000 + Math.random() * 900000);
 
-    // ૪. ડેટાબેઝમાં જે-તે યુઝરના રેકોર્ડમાં આ OTP સેવ કરે છે અને સેશનમાં ઈમેઈલ સાચવે છે
     await passportSch.findByIdAndUpdate(user.id, { otp: otp });
     req.session.resetEmail = email;
 
-    // ૫. Nodemailer ટ્રાન્સપોર્ટર સેટઅપ કરે છે (જીમેઈલ સર્વર સાથે કનેક્ટ કરવા માટે)
     const transporter = mailer.createTransport({
       host: "smtp.gmail.com",
       port: 465,
-      secure: true, // SSL/TLS નો ઉપયોગ કરવા માટે
+      secure: true,
       auth: {
         user: "roshnijp16@gmail.com",
         pass: "wwmz kemd xwid kdrs",
       },
     });
 
-    // ૬. ઈમેઈલનું કન્ટેન્ટ તૈયાર કરે છે (કોને મોકલવો, સબ્જેક્ટ શું રાખવો અને OTP શું છે)
     const createMail = {
       from: "Matrix Admin <roshnijp16@gmail.com>",
       to: email,
