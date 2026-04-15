@@ -12,5 +12,4 @@ const schema = new mongoose.Schema({
     },
   ],
 });
-
-export default mongoose.model("Poll", schema);
+module.exports = mongoose.model("Poll", schema);

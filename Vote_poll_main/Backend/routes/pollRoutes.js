@@ -2,8 +2,8 @@ const express = require("express");
 const Poll = require("../models/poll");
 const Vote = require("../models/vote");
 const auth = require("../middlewares/auth");
-const { text } = require("body-parser");
-const { default: poll } = require("../models/poll");
+// const { text } = require("body-parser");
+// const { default: poll } = require("../models/poll");
 
 const router = express.Router();
 
@@ -11,7 +11,7 @@ const router = express.Router();
 router.post("/", auth, async (req, res) => {
   const { question, options } = req.body;
 
-  if (!question || options.length < 2) {
+  if (!question || !options || options.length < 2) {
     return res.status(400).json({
       msg: "Invalid Data",
     });
@@ -52,4 +52,4 @@ router.post("/:id/vote", auth, async (req, res) => {
     res.status(500).json({ msg: "server Error" });
   }
 });
-export default router;
+module.exports = router;

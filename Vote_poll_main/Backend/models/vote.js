@@ -8,4 +8,4 @@ const schema = new mongoose.Schema({
 
 schema.index({ pollId: 1, userId: 1 }, { unique: true });
 
-export default mongoose.model("Vote", schema);
+module.exports = mongoose.model("Vote", schema);

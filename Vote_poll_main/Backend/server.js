@@ -10,9 +10,9 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-mongoose.connect("mongodb://127.0.0.1:27017/pollapp");
+mongoose.connect("mongodb://127.0.0.1:27017/Pollapp");
 
 app.use("/api/auth", authRoutes);
 app.use("/api/polls", pollRoutes);
 
-app.listen(port, () => console.log("Server running"));
+app.listen(port, () => console.log("http://localhost:" + port));
