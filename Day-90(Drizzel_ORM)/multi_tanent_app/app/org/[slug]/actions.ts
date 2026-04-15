@@ -25,4 +25,4 @@ export const getBlogs = async (orgId: string) => {
 export const deleteBlog = async (id: number) => {
   return await db.delete(blogTable).where(eq(blogTable.id, id));
 };
-
+
