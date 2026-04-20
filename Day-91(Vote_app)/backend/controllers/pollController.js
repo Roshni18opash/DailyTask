@@ -6,11 +6,9 @@ exports.createPoll = async (req, res) => {
     const { question, options } = req.body;
 
     if (!question || !options || options.length < 2) {
-      return res
-        .status(400)
-        .json({
-          msg: "Question and at least 2 options required.",
-        });
+      return res.status(400).json({
+        msg: "Question and at least 2 options required.",
+      });
     }
 
     const poll = await Poll.create({
@@ -92,6 +90,15 @@ exports.votePoll = async (req, res) => {
       return res.status(400).json({ msg: "Option required" });
     }
 
+    const poll = await Poll.findById(req.params.id);
+    if (!poll) {
+      return res.status(404).json({ msg: "Poll not found" });
+    }
+
+    if (poll.isClosed) {
+      return res.status(400).json({ msg: "Poll is closed for voting" });
+    }
+
     try {
       await Vote.create({
         pollId: req.params.id,
@@ -115,5 +122,32 @@ exports.votePoll = async (req, res) => {
   } catch (err) {
     console.error(err);
     res.status(500).json({ msg: "Vote failed" });
+  }
+};
+
+exports.togglePollStatus = async (req, res) => {
+  try {
+    const poll = await Poll.findById(req.params.id);
+    if (!poll) {
+      return res.status(404).json({ msg: "Poll not found" });
+    }
+
+    // Only creator can toggle? Or only admin?
+    // User said "admin can create poll", and usually admin or creator can toggle.
+    // Let's allow creator (who must be admin as per new rules) to toggle.
+    if (poll.creatorEmail !== req.user.email) {
+      return res.status(403).json({ msg: "Not authorized to close this poll" });
+    }
+
+    poll.isClosed = !poll.isClosed;
+    await poll.save();
+
+    res.json({
+      msg: `Poll ${poll.isClosed ? "closed" : "opened"} successfuly`,
+      isClosed: poll.isClosed,
+    });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ msg: "Failed to toggle poll status" });
   }
 };

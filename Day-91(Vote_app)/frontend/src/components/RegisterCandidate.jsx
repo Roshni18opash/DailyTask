@@ -92,6 +92,7 @@ const RegisterCandidate = () => {
           }}
         >
           <option value="voter">Voter</option>
+          <option value="admin">Admin</option>
         </select>
         <input
           type="password"

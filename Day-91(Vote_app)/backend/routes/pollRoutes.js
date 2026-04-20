@@ -5,12 +5,14 @@ const {
   checkAuth,
   optionalAuth,
   checkAdmin,
+  checkVoter,
 } = require("../middleware/authMiddleware");
 
-router.post("/", checkAuth, pollController.createPoll);
 router.get("/", optionalAuth, pollController.getAllPolls);
 router.get("/my", checkAuth, pollController.getMyPolls);
 router.get("/:id", optionalAuth, pollController.getPollById);
-router.post("/:id/vote", checkAuth, pollController.votePoll);
-
+router.post("/:id/vote", checkAuth, checkVoter, pollController.votePoll);
+router.patch("/:id/toggle", checkAuth, pollController.togglePollStatus);
+router.post("/create-poll", checkAuth, pollController.createPoll);
+router.post("/", checkAuth, pollController.createPoll);
 module.exports = router;

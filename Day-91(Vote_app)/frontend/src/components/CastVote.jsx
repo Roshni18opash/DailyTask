@@ -34,6 +34,13 @@ const CastVote = () => {
 
   useEffect(() => {
     fetchPoll();
+
+    // Auto-refresh every 5 seconds
+    const interval = setInterval(() => {
+      fetchPoll();
+    }, 5000);
+
+    return () => clearInterval(interval);
   }, [id]);
 
   const handleVote = async () => {
@@ -100,56 +107,88 @@ const CastVote = () => {
         ← Back
       </button>
       <h2 style={{ fontSize: "24px", marginBottom: "10px" }}>
-        {state.poll.question}
+        {state.poll.question}{" "}
+        {state.poll.isClosed && (
+          <span
+            style={{
+              fontSize: "14px",
+              color: "#fff",
+              background: "#dc3545",
+              padding: "4px 8px",
+              borderRadius: "4px",
+              verticalAlign: "middle",
+              marginLeft: "10px",
+            }}
+          >
+            Closed
+          </span>
+        )}
       </h2>
       <p style={{ color: "#777", fontSize: "14px", marginBottom: "30px" }}>
         Total votes: {totalVotes}
       </p>
 
-      {!state.voted ? (
+      {!state.voted && !state.poll.isClosed ? (
         <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
-          {state.poll.options.map((opt, i) => (
-            <label
-              key={i}
-              style={{
-                display: "flex",
-                alignItems: "center",
-                padding: "12px 15px",
-                border: "1px solid #ddd",
-                borderRadius: "6px",
-                cursor: "pointer",
-                background: state.selected === i ? "#f0f7ff" : "white",
-                borderColor: state.selected === i ? "#007bff" : "#ddd",
-              }}
-            >
-              <input
-                type="radio"
-                name="poll"
-                checked={state.selected === i}
-                onChange={() => dispatch({ selected: i })}
-                style={{ marginRight: "10px" }}
-              />
-              {opt.text}
-            </label>
-          ))}
-          <button
-            onClick={handleVote}
-            disabled={state.loading || state.selected === null}
-            style={{
-              marginTop: "20px",
-              padding: "12px",
-              background: "#007bff",
-              color: "white",
-              border: "none",
-              borderRadius: "6px",
-              fontSize: "16px",
-              fontWeight: "600",
-              cursor: "pointer",
-              opacity: state.loading || state.selected === null ? 0.6 : 1,
-            }}
-          >
-            {state.loading ? "Recording..." : "Cast My Vote"}
-          </button>
+          {(() => {
+            try {
+              const user = JSON.parse(localStorage.getItem("user"));
+              if (user?.role === "admin") {
+                return (
+                  <div style={{ padding: "15px", background: "#f8d7da", color: "#721c24", borderRadius: "6px" }}>
+                    Admins are not allowed to vote.
+                  </div>
+                );
+              }
+            } catch (e) {}
+            return null;
+          })()}
+          {(!localStorage.getItem("user") || JSON.parse(localStorage.getItem("user")).role !== "admin") && (
+            <>
+              {state.poll.options.map((opt, i) => (
+                <label
+                  key={i}
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    padding: "12px 15px",
+                    border: "1px solid #ddd",
+                    borderRadius: "6px",
+                    cursor: "pointer",
+                    background: state.selected === i ? "#f0f7ff" : "white",
+                    borderColor: state.selected === i ? "#007bff" : "#ddd",
+                  }}
+                >
+                  <input
+                    type="radio"
+                    name="poll"
+                    checked={state.selected === i}
+                    onChange={() => dispatch({ selected: i })}
+                    style={{ marginRight: "10px" }}
+                  />
+                  {opt.text}
+                </label>
+              ))}
+              <button
+                onClick={handleVote}
+                disabled={state.loading || state.selected === null}
+                style={{
+                  marginTop: "20px",
+                  padding: "12px",
+                  background: "#007bff",
+                  color: "white",
+                  border: "none",
+                  borderRadius: "6px",
+                  fontSize: "16px",
+                  fontWeight: "600",
+                  cursor: "pointer",
+                  opacity: state.loading || state.selected === null ? 0.6 : 1,
+                }}
+              >
+                {state.loading ? "Recording..." : "Cast My Vote"}
+              </button>
+            </>
+          )}
         </div>
       ) : (
         <div style={{ display: "flex", flexDirection: "column", gap: "20px" }}>

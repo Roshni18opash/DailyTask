@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 const HomePage = () => {
+  const user = JSON.parse(localStorage.getItem("user"));
   const [polls, setPolls] = useState([]);
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
@@ -57,18 +58,21 @@ const HomePage = () => {
           >
             My Polls
           </Link>
-          <Link
-            to="/create-poll"
-            style={{
-              textDecoration: "none",
-              color: "#fff",
-              background: "#007bff",
-              padding: "8px 16px",
-              borderRadius: "4px",
-            }}
-          >
-            Create Poll
-          </Link>
+
+          {user && (
+            <Link
+              to="/create-poll"
+              style={{
+                textDecoration: "none",
+                color: "#fff",
+                background: "#007bff",
+                padding: "8px 16px",
+                borderRadius: "4px",
+              }}
+            >
+              Create Poll
+            </Link>
+          )}
           <button
             onClick={handleLogout}
             style={{
