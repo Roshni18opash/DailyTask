@@ -33,7 +33,7 @@ const checkAdmin = (req, res, next) => {
   if (req.user && req.user.role === "admin") {
     next();
   } else {
-    res.status(403).send("Forbidden: Admins only");
+    res.status(403).send("Admins only");
   }
 };
 
@@ -41,7 +41,7 @@ const checkVoter = (req, res, next) => {
   if (req.user && req.user.role === "voter") {
     next();
   } else {
-    res.status(403).send("Forbidden: Voters only");
+    res.status(403).send("Voters only");
   }
 };
 

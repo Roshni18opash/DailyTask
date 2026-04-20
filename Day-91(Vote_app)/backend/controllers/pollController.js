@@ -14,24 +14,24 @@ exports.createPoll = async (req, res) => {
     const poll = await Poll.create({
       creatorEmail: req.user.email,
       question,
-      options: options.map((text) => ({ text })),
+      options: options.map((text) => ({ text })), // if i/p [react,nodejs]-->it pass[{text:"react" , votes:0},{text:"nodejs",votes:0}]
     });
 
-    res.status(201).json(poll);
+    res.status(201).json(poll); //send created poll to frontend
   } catch (err) {
     console.error(err);
     res.status(500).json({ msg: "Failed to create poll" });
   }
 };
-
+//get all polls
 exports.getAllPolls = async (req, res) => {
   try {
     const polls = await Poll.find();
 
     let votedPollIds = [];
     if (req.user) {
-      const userVotes = await Vote.find({ userId: req.user._id });
-      votedPollIds = userVotes.map((v) => v.pollId.toString());
+      const userVotes = await Vote.find({ userId: req.user._id }); //cur user votes
+      votedPollIds = userVotes.map((v) => v.pollId.toString()); //convert votes=>arr of pollids
     }
 
     const pollsData = polls.map((poll) => ({
@@ -44,7 +44,7 @@ exports.getAllPolls = async (req, res) => {
     res.status(500).json({ msg: "Failed to fetch polls" });
   }
 };
-
+//get all mypoll
 exports.getMyPolls = async (req, res) => {
   try {
     const polls = await Poll.find({ creatorEmail: req.user.email });
@@ -135,18 +135,18 @@ exports.togglePollStatus = async (req, res) => {
     if (req.user.role !== "admin") {
       return res
         .status(403)
-        .json({ msg: "Forbidden: Only admins can open or close polls" });
+        .json({ msg: "Only admins can open or close polls" });
     }
 
     poll.isClosed = !poll.isClosed;
     await poll.save();
 
     res.json({
-      msg: `Poll ${poll.isClosed ? "closed" : "opened"} successfuly`,
+      msg: `Poll ${poll.isClosed ? "closed" : "opened"} successfully`,
       isClosed: poll.isClosed,
     });
   } catch (err) {
     console.error(err);
-    res.status(500).json({ msg: "Failed to toggle poll status" });
+    res.status(500).json({ msg: "Failed to toggle poll" });
   }
 };
