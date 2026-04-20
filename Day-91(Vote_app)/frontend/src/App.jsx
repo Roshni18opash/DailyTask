@@ -8,7 +8,8 @@ import CreatePoll from "./components/CreatePoll";
 import MyPolls from "./components/MyPolls";
 
 function App() {
-  const isAuthenticated = localStorage.getItem("token") && localStorage.getItem("token") !== "null";
+  const isAuthenticated =
+    localStorage.getItem("token") && localStorage.getItem("token") !== "null";
 
   return (
     <Routes>
@@ -17,11 +18,12 @@ function App() {
       <Route path="/register" element={<RegisterCandidate />} />
       <Route
         path="/create-poll"
-        element={
-          isAuthenticated ? <CreatePoll /> : <Navigate to="/login" />
-        }
+        element={isAuthenticated ? <CreatePoll /> : <Navigate to="/login" />}
       />
-      <Route path="/my-polls" element={isAuthenticated ? <MyPolls /> : <Navigate to="/login" />} />
+      <Route
+        path="/my-polls"
+        element={isAuthenticated ? <MyPolls /> : <Navigate to="/login" />}
+      />
       <Route path="/poll/:id" element={<CastVote />} />
     </Routes>
   );

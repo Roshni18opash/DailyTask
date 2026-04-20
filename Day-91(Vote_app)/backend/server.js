@@ -1,5 +1,4 @@
-require("dotenv").config();
-// import voteRoutes = require("./controllers/voteController");
+const dotenv = require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
 const connectDB = require("./configs/db");

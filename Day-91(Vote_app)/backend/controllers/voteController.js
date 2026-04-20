@@ -1,4 +1,4 @@
-const { Poll } = "../models/Poll.js";
+const { Poll } = require("../models/Poll");
 exports.voteOnPoll = async (req, res) => {
   try {
     const pollId = req.params.id;

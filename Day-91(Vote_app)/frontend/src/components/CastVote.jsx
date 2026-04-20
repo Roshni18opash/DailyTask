@@ -13,11 +13,7 @@ const CastVote = () => {
 
   const fetchPoll = async () => {
     const token = localStorage.getItem("token");
-    if (!token) {
-      navigate("/login");
-      return;
-    }
-    const headers = { Authorization: `Bearer ${token}` };
+    const headers = token ? { Authorization: `Bearer ${token}` } : {};
 
     const res = await fetch(`http://localhost:5000/api/polls/${id}`, {
       headers,
@@ -46,6 +42,10 @@ const CastVote = () => {
   const handleVote = async () => {
     if (state.loading) return;
     const token = localStorage.getItem("token");
+    if (!token) {
+      navigate("/login");
+      return;
+    }
     if (state.selected === null) return alert("Please select an option");
 
     dispatch({ loading: true });
@@ -135,7 +135,14 @@ const CastVote = () => {
               const user = JSON.parse(localStorage.getItem("user"));
               if (user?.role === "admin") {
                 return (
-                  <div style={{ padding: "15px", background: "#f8d7da", color: "#721c24", borderRadius: "6px" }}>
+                  <div
+                    style={{
+                      padding: "15px",
+                      background: "#f8d7da",
+                      color: "#721c24",
+                      borderRadius: "6px",
+                    }}
+                  >
                     Admins are not allowed to vote.
                   </div>
                 );
@@ -143,7 +150,8 @@ const CastVote = () => {
             } catch (e) {}
             return null;
           })()}
-          {(!localStorage.getItem("user") || JSON.parse(localStorage.getItem("user")).role !== "admin") && (
+          {(!localStorage.getItem("user") ||
+            JSON.parse(localStorage.getItem("user")).role !== "admin") && (
             <>
               {state.poll.options.map((opt, i) => (
                 <label

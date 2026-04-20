@@ -132,11 +132,10 @@ exports.togglePollStatus = async (req, res) => {
       return res.status(404).json({ msg: "Poll not found" });
     }
 
-    // Only creator can toggle? Or only admin?
-    // User said "admin can create poll", and usually admin or creator can toggle.
-    // Let's allow creator (who must be admin as per new rules) to toggle.
-    if (poll.creatorEmail !== req.user.email) {
-      return res.status(403).json({ msg: "Not authorized to close this poll" });
+    if (req.user.role !== "admin") {
+      return res
+        .status(403)
+        .json({ msg: "Forbidden: Only admins can open or close polls" });
     }
 
     poll.isClosed = !poll.isClosed;
