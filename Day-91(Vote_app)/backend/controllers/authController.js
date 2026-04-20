@@ -1,6 +1,7 @@
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const User = require("../models/User");
+
 //for regi.
 
 exports.register = async (req, res) => {
@@ -20,7 +21,6 @@ exports.register = async (req, res) => {
       name,
       email,
       password: hashedPassword,
-      role: "admin",
     });
 
     res.status(201).json({ msg: "User registered successfully" });

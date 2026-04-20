@@ -123,7 +123,7 @@ const CreatePoll = () => {
               width: "100%",
             }}
           >
-            + Add Another Option
+            + Add
           </button>
         </div>
 
@@ -141,7 +141,7 @@ const CreatePoll = () => {
             cursor: "pointer",
           }}
         >
-          {loading ? "Creating..." : "Launch Poll"}
+          {loading ? "Creating..." : "Create Poll"}
         </button>
       </form>
     </div>

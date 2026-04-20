@@ -6,6 +6,7 @@ const RegisterCandidate = () => {
     name: "",
     email: "",
     password: "",
+    role: "voter",
     loading: false,
   });
   const navigate = useNavigate();
@@ -22,6 +23,7 @@ const RegisterCandidate = () => {
           name: state.name,
           email: state.email,
           password: state.password,
+          role: state.role,
         }),
       });
 
@@ -78,6 +80,19 @@ const RegisterCandidate = () => {
             boxSizing: "border-box",
           }}
         />
+        <select
+          value={state.role}
+          onChange={(e) => dispatch({ role: e.target.value })}
+          style={{
+            width: "100%",
+            padding: "12px",
+            borderRadius: "4px",
+            border: "1px solid #ccc",
+            marginBottom: "15px",
+          }}
+        >
+          <option value="voter">Voter</option>
+        </select>
         <input
           type="password"
           placeholder="Password"
@@ -106,6 +121,7 @@ const RegisterCandidate = () => {
             cursor: "pointer",
           }}
         >
+          Register
         </button>
       </form>
       <p style={{ textAlign: "center", marginTop: "20px", fontSize: "14px" }}>
