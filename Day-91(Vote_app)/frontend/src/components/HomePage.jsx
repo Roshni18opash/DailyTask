@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 const HomePage = () => {
-  const user = JSON.parse(localStorage.getItem("user"));
   const [polls, setPolls] = useState([]);
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
@@ -25,12 +24,6 @@ const HomePage = () => {
       .catch(() => setLoading(false));
   }, [navigate]);
 
-  const handleLogout = () => {
-    localStorage.removeItem("token");
-    localStorage.removeItem("user");
-    navigate("/login");
-  };
-
   return (
     <div
       style={{
@@ -41,53 +34,6 @@ const HomePage = () => {
         color: "#333",
       }}
     >
-      <header
-        style={{
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-          borderBottom: "1px solid #eee",
-          paddingBottom: "15px",
-          marginBottom: "30px",
-        }}
-      >
-        <div style={{ display: "flex", gap: "15px", alignItems: "center" }}>
-          <Link
-            to="/my-polls"
-            style={{ textDecoration: "none", color: "#555" }}
-          >
-            My Polls
-          </Link>
-
-          {user && (
-            <Link
-              to="/create-poll"
-              style={{
-                textDecoration: "none",
-                color: "#fff",
-                background: "#007bff",
-                padding: "8px 16px",
-                borderRadius: "4px",
-              }}
-            >
-              Create Poll
-            </Link>
-          )}
-          <button
-            onClick={handleLogout}
-            style={{
-              background: "none",
-              border: "1px solid #ccc",
-              padding: "7px 12px",
-              borderRadius: "4px",
-              cursor: "pointer",
-            }}
-          >
-            Logout
-          </button>
-        </div>
-      </header>
-
       <h2 style={{ fontSize: "20px", marginBottom: "20px" }}>Latest Polls</h2>
       {loading ? (
         <p>Loading polls...</p>

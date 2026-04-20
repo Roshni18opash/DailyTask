@@ -34,12 +34,12 @@ exports.getAllPolls = async (req, res) => {
       votedPollIds = userVotes.map((v) => v.pollId.toString());
     }
 
-    const pollsWithMetadata = polls.map((poll) => ({
+    const pollsData = polls.map((poll) => ({
       ...poll.toObject(),
       isVoted: votedPollIds.includes(poll._id.toString()),
     }));
 
-    res.json(pollsWithMetadata);
+    res.json(pollsData);
   } catch (err) {
     res.status(500).json({ msg: "Failed to fetch polls" });
   }
